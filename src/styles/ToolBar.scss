@@ -1,0 +1,26 @@
+@import "./variables/variables";
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: $body-color;
+
+  .toolbar__navigation {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .toolbar__logo {
+      a {
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: 200;
+        color: whitesmoke;
+        font-family: "Dancing Script", cursive;
+      }
+    }
+  }
+}

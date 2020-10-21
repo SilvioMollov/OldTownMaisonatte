@@ -1,0 +1,12 @@
+@mixin headline-borders {
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  margin: 10px auto;
+  padding: 0 10px;
+  font-size: 2.5em;
+  font-weight: 200;
+}
+
+@mixin sub-headline-borders {
+  border-bottom: 2px solid;
+}
