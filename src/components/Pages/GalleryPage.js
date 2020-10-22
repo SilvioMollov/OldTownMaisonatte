@@ -29,6 +29,8 @@ class Gallery extends Component {
     });
   };
 
+  
+
   closeModalHandler = () => {
     this.setState({ showPic: false });
   };
