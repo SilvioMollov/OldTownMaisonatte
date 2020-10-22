@@ -1,0 +1,43 @@
+@import "./variables/variables";
+@import "./variables/mixins";
+
+.gallery-page__container {
+  padding: $padding-body-container;
+  max-width: 1500px;
+  margin: auto;
+
+  h2 {
+    @include headline-borders;
+  }
+
+  .gallery-page__grid-container {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1rem;
+    grid-auto-flow: dense;
+
+    .gallery-page__grid-item {
+      list-style: none;
+
+      figure {
+        margin: 0;
+        img {
+          border: 2px solid;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .gallery-page__slider {
+    img {
+      width: 200px;
+      height: auto;
+    }
+    .gallery-page__slide {
+    }
+  }
+}

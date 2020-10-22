@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import {
   BrowserRouter as Router,
+  Switch,
   Route,
   withRouter,
   Redirect,
 } from "react-router-dom";
 import "./App.scss";
 import HomePage from "./components/Pages/HomePage";
+import GalleryPage from "./components/Pages/GalleryPage";
 import Layout from "./components/Layout/Layout";
 
 class App extends Component {
@@ -15,8 +17,11 @@ class App extends Component {
       <div className="App">
         <Router>
           <Layout>
-            <Route path="/home" component={HomePage} />
-            <Redirect to={"/home"} />
+            <Switch>
+              <Route path="/home" component={HomePage} />
+              <Route path="/gallery" component={GalleryPage} />
+              <Redirect to={"/home"} />
+            </Switch>
           </Layout>
         </Router>
       </div>

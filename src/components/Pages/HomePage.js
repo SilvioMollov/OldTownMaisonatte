@@ -12,6 +12,9 @@ import { faSeedling } from "@fortawesome/free-solid-svg-icons";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import { faWifi } from "@fortawesome/free-solid-svg-icons";
 import { faParking } from "@fortawesome/free-solid-svg-icons";
+import { faSnowflake } from "@fortawesome/free-solid-svg-icons";
+import { faBath } from "@fortawesome/free-solid-svg-icons";
+
 //slider imges
 import Img1 from "../../assets/DSC09108.jpg";
 import Img2 from "../../assets/DSC09124.jpg";
@@ -60,33 +63,41 @@ class HomePage extends Component {
             <img src={Img3} alt="pic3"></img>
           </div>
         </Slider>
-        <div className="home-page__grid-container__features">
+        <ul className="home-page__grid-container__features">
           <h2>Most popular Features</h2>
-          <div className="home-page__features_grid-item">
+          <li className="home-page__features_grid-item">
             <FontAwesomeIcon icon={faHome} />
             <span>Whole apartment</span>
-          </div>
-          <div className="home-page__features_grid-item">
+          </li>
+          <li className="home-page__features_grid-item">
             <h1 className="area">125 sqm</h1>
             <span>Size</span>
-          </div>
-          <div className="home-page__features_grid-item">
+          </li>
+          <li className="home-page__features_grid-item">
             <FontAwesomeIcon icon={faSeedling} />
             <span>Garden</span>
-          </div>
-          <div className="home-page__features_grid-item">
+          </li>
+          <li className="home-page__features_grid-item">
             <FontAwesomeIcon icon={faUtensils} />
             <span>BBQ facilities</span>
-          </div>
-          <div className="home-page__features_grid-item">
+          </li>
+          <li className="home-page__features_grid-item">
             <FontAwesomeIcon icon={faWifi} />
             <span>Free Wifi</span>
-          </div>
-          <div className="home-page__features_grid-item">
+          </li>
+          <li className="home-page__features_grid-item">
             <FontAwesomeIcon icon={faParking} />
             <span>Free Parking</span>
-          </div>
-        </div>
+          </li>
+          <li className="home-page__features_grid-item">
+            <FontAwesomeIcon icon={faSnowflake} />
+            <span>AC</span>
+          </li>
+          <li className="home-page__features_grid-item">
+            <FontAwesomeIcon icon={faBath} />
+            <span>Two Bathrooms</span>
+          </li>
+        </ul>
         <div className="home-page__grid-container__description">
           <iframe
             title="location"

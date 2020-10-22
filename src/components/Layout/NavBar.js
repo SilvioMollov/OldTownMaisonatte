@@ -19,11 +19,11 @@ class NavBar extends Component {
         </li>
         <li>
           <NavLink
-            to="/reservation"
+            to="/gallery"
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >
-            Reservation
+            Gallery
             <i className="fas fa-heart"></i>
           </NavLink>
         </li>
