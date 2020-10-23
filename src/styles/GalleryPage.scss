@@ -21,13 +21,9 @@
     .gallery-page__grid-item {
       list-style: none;
 
-      figure {
-        margin: 0;
-        img {
-          border: 2px solid;
-          width: 100%;
-          object-fit: cover;
-        }
+      img {
+        width: 100%;
+        object-fit: cover;
       }
     }
   }
@@ -36,6 +32,36 @@
     img {
       width: 200px;
       height: auto;
+    }
+
+    button.slick-arrow.slick-next {
+      right: 0;
+    }
+
+    button.slick-arrow.slick-prev {
+      left: 0;
+    }
+
+    button.slick-arrow {
+      position: absolute;
+      background-color: red;
+      z-index: 550;
+      width: 4vw;
+      height: 4vw;
+    }
+
+    .slick-arrow::before {
+      font-size: 50px;
+      content: none;
+    }
+
+    .slick-dots {
+      bottom: 0;
+      li {
+        button::before {
+          color: white;
+        }
+      }
     }
     .gallery-page__slide {
     }

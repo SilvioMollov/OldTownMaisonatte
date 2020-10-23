@@ -6,6 +6,8 @@ import {
   withRouter,
   Redirect,
 } from "react-router-dom";
+import SimpleReactLightbox from "simple-react-lightbox";
+
 import "./App.scss";
 import HomePage from "./components/Pages/HomePage";
 import GalleryPage from "./components/Pages/GalleryPage";
@@ -16,13 +18,15 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Layout>
-            <Switch>
-              <Route path="/home" component={HomePage} />
-              <Route path="/gallery" component={GalleryPage} />
-              <Redirect to={"/home"} />
-            </Switch>
-          </Layout>
+          <SimpleReactLightbox>
+            <Layout>
+              <Switch>
+                <Route path="/home" component={HomePage} />
+                <Route path="/gallery" component={GalleryPage} />
+                <Redirect to={"/home"} />
+              </Switch>
+            </Layout>
+          </SimpleReactLightbox>
         </Router>
       </div>
     );

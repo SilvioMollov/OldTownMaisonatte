@@ -29,7 +29,39 @@ import airport from "../../assets/airport.svg";
 import bar from "../../assets/tropical-bar.svg";
 
 class HomePage extends Component {
+  state = {
+    slidesToShow: 3,
+    showFeatureSlider: false,
+  };
+
+  componentDidMount() {
+    this.trackScreenSizeListener();
+    window.addEventListener("resize", this.trackScreenSizeListener);
+  }
+
+  trackScreenSizeListener = () => {
+    const { slidesToShow } = this.state;
+
+    if (window.innerWidth < 600 && slidesToShow !== 1) {
+      this.setState({ slidesToShow: 1, showFeatureSlider: true });
+    } else if (
+      window.innerWidth > 600 &&
+      window.innerWidth <= 1200 &&
+      this.state.slidesToShow !== 2
+    ) {
+      this.setState({ slidesToShow: 2, showFeatureSlider: false });
+    } else if (window.innerWidth > 1200 && slidesToShow !== 3) {
+      this.setState({ slidesToShow: 3 });
+    }
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.trackScreenSizeListener);
+  }
+
   render() {
+    const { slidesToShow, showFeatureSlider } = this.state;
+
     const headSliderSettings = {
       dots: true,
       infinite: true,
@@ -39,11 +71,21 @@ class HomePage extends Component {
       arrows: false,
     };
 
+    const featureSliderSettings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      autoplay: true,
+    };
+
     const landmarksSliderSettings = {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: slidesToShow,
       slidesToScroll: 1,
       arrows: false,
       autoplay: true,
@@ -63,8 +105,48 @@ class HomePage extends Component {
             <img src={Img3} alt="pic3"></img>
           </div>
         </Slider>
+
+        <h2>Most popular Features</h2>
+
+        {/* {showFeatureSlider ? (
+          <ul className="home-page__grid-container__features">
+            <Slider {...featureSliderSettings}>
+              <li className="home-page__features_grid-item">
+                <FontAwesomeIcon icon={faHome} />
+                <span>Whole apartment</span>
+              </li>
+              <li className="home-page__features_grid-item">
+                <h1 className="area">125 sqm</h1>
+                <span>Size</span>
+              </li>
+              <li className="home-page__features_grid-item">
+                <FontAwesomeIcon icon={faSeedling} />
+                <span>Garden</span>
+              </li>
+              <li className="home-page__features_grid-item">
+                <FontAwesomeIcon icon={faUtensils} />
+                <span>BBQ facilities</span>
+              </li>
+              <li className="home-page__features_grid-item">
+                <FontAwesomeIcon icon={faWifi} />
+                <span>Free Wifi</span>
+              </li>
+              <li className="home-page__features_grid-item">
+                <FontAwesomeIcon icon={faParking} />
+                <span>Free Parking</span>
+              </li>
+              <li className="home-page__features_grid-item">
+                <FontAwesomeIcon icon={faSnowflake} />
+                <span>AC</span>
+              </li>
+              <li className="home-page__features_grid-item">
+                <FontAwesomeIcon icon={faBath} />
+                <span>Two Bathrooms</span>
+              </li>
+            </Slider>
+          </ul>
+        ) : ( */}
         <ul className="home-page__grid-container__features">
-          <h2>Most popular Features</h2>
           <li className="home-page__features_grid-item">
             <FontAwesomeIcon icon={faHome} />
             <span>Whole apartment</span>
@@ -98,6 +180,8 @@ class HomePage extends Component {
             <span>Two Bathrooms</span>
           </li>
         </ul>
+        {/* )} */}
+
         <div className="home-page__grid-container__description">
           <iframe
             title="location"

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../../styles/Layout.scss";
 import ToolBar from "./ToolBar";
-
+import Backdrop from "../Utilities/BackDrop";
+import SideDrawer from "./SideDrawer";
 
 class Layout extends Component {
   state = {
@@ -10,7 +11,6 @@ class Layout extends Component {
 
   drawerCloseHandler = () => {
     this.setState({ showSideDrawer: false });
-    console.log(this.state.showSideDrawer);
   };
 
   drawerOpenHandler = () => {
@@ -23,15 +23,14 @@ class Layout extends Component {
     return (
       <>
         <ToolBar drawerClickHandler={this.drawerOpenHandler} />
-        {/* <SideDrawer
-          //   isAuth={this.props.isAuth}
+        <SideDrawer
           isOpen={this.state.showSideDrawer}
           clicked={this.drawerCloseHandler}
         />
         <Backdrop
-          show={this.state.showSideDrawer}
-          clicked={this.drawerCloseHandler}
-        ></Backdrop> */}
+          showBackDrop={this.state.showSideDrawer}
+          clickedBackDrop={this.drawerCloseHandler}
+        ></Backdrop>
 
         <main>{this.props.children}</main>
       </>
