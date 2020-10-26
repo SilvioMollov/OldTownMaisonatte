@@ -4,9 +4,24 @@
 .home-page__container {
   max-width: 1900px;
   margin: auto;
-
   .home-page__slider {
     margin-bottom: $margin-body-bottom-container;
+    max-width: 1900px;
+
+    .slick-dots {
+      li {
+        button {
+          &:before {
+            color: $body-color;
+          }
+        }
+      }
+    }
+
+    .slick-dots li.slick-active button:before {
+      color: $body-color;
+    }
+
     img {
       margin: 0 auto;
       width: 100%;
@@ -14,10 +29,68 @@
       object-fit: cover;
     }
   }
+  .home-page__h2 {
+    padding: 15px;
+    h2 {
+      @include headline-borders;
+      max-width: 500px;
+    }
+  }
 
-  h2 {
-    @include headline-borders;
-    max-width: 500px;
+  .home-page__features_slider {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-evenly;
+    align-items: stretch;
+
+    button.slick-arrow {
+      z-index: 400;
+      width: 40px;
+      height: 40px;
+
+      &.slick-prev {
+        left: 10px;
+
+        color: red;
+      }
+
+      &:before {
+        color: $body-color;
+        font-size: 45px;
+      }
+
+      &.slick-next {
+        right: 10px;
+      }
+    }
+
+    .home-page__slider-item {
+      padding: 20px;
+      height: 150px;
+
+      div {
+        margin: auto;
+        padding: 10px;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        border-bottom: solid 5px #b77b57;
+        border-left: solid 5px #b77b57;
+
+        svg {
+          margin: auto;
+          display: block;
+          font-size: 50px;
+          color: #b77b57;
+        }
+
+        span {
+          font-family: "Architects Daughter", cursive;
+          display: block;
+          font-size: 1.2em;
+          color: $body-color;
+        }
+      }
+    }
   }
 
   .home-page__grid-container__features {
@@ -27,7 +100,6 @@
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 1rem;
     grid-auto-flow: dense;
-
     justify-items: center;
     align-items: stretch;
 
@@ -41,13 +113,6 @@
       border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
       border-bottom: solid 5px $body-color;
       border-left: solid 5px $body-color;
-
-      .area {
-        margin: 0;
-        font-size: 35px;
-        font-weight: 700;
-        color: $body-color;
-      }
 
       svg {
         margin: auto;
@@ -73,29 +138,31 @@
     gap: 15px;
     align-content: center;
 
-    h2 {
+    .home-page__title-text__container {
       grid-column: 2;
-      grid-row: 1;
-      @include headline-borders;
+      grid-row: 1 / span 2;
+      align-self: center;
+      h2 {
+        @include headline-borders;
+      }
+
+      p {
+        word-break: normal;
+        text-align: initial;
+        align-self: center;
+      }
     }
 
     .home-page__description_grid-item {
-      justify-content: center;
     }
 
     iframe {
       grid-row: 1 / span 2;
       grid-column: 1;
       width: 100%;
+      min-height: 350px;
       height: 100%;
-    }
-
-    p {
-      grid-column: 2;
-      grid-row: 2;
-      word-break: normal;
-      text-align: initial;
-      align-self: center;
+      border: 1px solid;
     }
   }
 
@@ -109,9 +176,38 @@
     .home-page__landmarks_slider {
       grid-row: 2;
       grid-column: 1 / span 3;
+      padding: 0 45px;
+
+      .slick-list {
+        overflow: hidden;
+      }
+
+      button.slick-arrow {
+        z-index: 400;
+        width: 40px;
+        height: 40px;
+
+        &.slick-prev {
+          left: 0px;
+        }
+
+        &:before {
+          color: $body-color;
+          font-size: 45px;
+        }
+
+        &.slick-next {
+          right: 0px;
+        }
+      }
     }
 
     .home-page__landmarks_landmark {
+      a {
+        text-decoration: none;
+        color: #3f3f41;
+        cursor: pointer;
+      }
     }
 
     span {
@@ -130,6 +226,10 @@
     img {
       width: 50px;
       margin: 10px auto;
+    }
+
+    img:hover {
+      transform: scale(1.2);
     }
   }
 }
@@ -157,6 +257,9 @@
 
 @media screen and (max-width: 600px) {
   .home-page__container {
-    
+    .home-page__grid-container__description {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
