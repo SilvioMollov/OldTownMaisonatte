@@ -88,7 +88,7 @@ class HomePage extends Component {
     const landmarksSliderSettings = {
       // className: "center",
       // centerMode: true,
-      // centerPadding: "80px",
+      // centerPadding: "30px",
       dots: false,
       infinite: true,
       speed: 500,
@@ -113,100 +113,100 @@ class HomePage extends Component {
             </div>
           </Slider>
           <div className="home-page__contact-information"></div>
+
           <div className="home-page__h2">
             <h2>Most popular Features</h2>
-          </div>
-
-          {initFeatureSlider ? (
-            <Slider
-              {...featureSliderSettings}
-              className="home-page__features_slider"
-            >
-              <div className="home-page__slider-item">
-                <div>
+            {initFeatureSlider ? (
+              <Slider
+                {...featureSliderSettings}
+                className="home-page__features_slider"
+              >
+                <div className="home-page__slider-item">
+                  <div>
+                    <FontAwesomeIcon icon={faHome} />
+                    <span>Whole apartment</span>
+                  </div>
+                </div>
+                <div className="home-page__slider-item">
+                  <div>
+                    <FontAwesomeIcon icon={faUtensils} />
+                    <span>BBQ facilities</span>
+                  </div>
+                </div>
+                <div className="home-page__slider-item">
+                  <div>
+                    <FontAwesomeIcon icon={faBath} />
+                    <span>Two Bathrooms</span>
+                  </div>
+                </div>
+                <div className="home-page__slider-item">
+                  <div>
+                    <FontAwesomeIcon icon={faWifi} />
+                    <span>Free Wifi</span>
+                  </div>
+                </div>
+                <div className="home-page__slider-item">
+                  <div>
+                    <FontAwesomeIcon icon={faSeedling} />
+                    <span>Outdoor Space</span>
+                  </div>
+                </div>
+                <div className="home-page__slider-item">
+                  <div>
+                    <FontAwesomeIcon icon={faParking} />
+                    <span>Free Parking</span>
+                  </div>
+                </div>
+                <div className="home-page__slider-item">
+                  <div>
+                    <FontAwesomeIcon icon={faVectorSquare} />
+                    <span>125 sqm</span>
+                  </div>
+                </div>
+                <div className="home-page__slider-item">
+                  <div>
+                    <FontAwesomeIcon icon={faSnowflake} />
+                    <span>Air conditioning</span>
+                  </div>
+                </div>
+              </Slider>
+            ) : (
+              <ul className="home-page__grid-container__features">
+                <li className="home-page__features_grid-item">
                   <FontAwesomeIcon icon={faHome} />
                   <span>Whole apartment</span>
-                </div>
-              </div>
-              <div className="home-page__slider-item">
-                <div>
-                  <FontAwesomeIcon icon={faUtensils} />
-                  <span>BBQ facilities</span>
-                </div>
-              </div>
-              <div className="home-page__slider-item">
-                <div>
-                  <FontAwesomeIcon icon={faBath} />
-                  <span>Two Bathrooms</span>
-                </div>
-              </div>
-              <div className="home-page__slider-item">
-                <div>
-                  <FontAwesomeIcon icon={faWifi} />
-                  <span>Free Wifi</span>
-                </div>
-              </div>
-              <div className="home-page__slider-item">
-                <div>
-                  <FontAwesomeIcon icon={faSeedling} />
-                  <span>Outdoor Space</span>
-                </div>
-              </div>
-              <div className="home-page__slider-item">
-                <div>
-                  <FontAwesomeIcon icon={faParking} />
-                  <span>Free Parking</span>
-                </div>
-              </div>
-              <div className="home-page__slider-item">
-                <div>
+                </li>
+                <li className="home-page__features_grid-item">
                   <FontAwesomeIcon icon={faVectorSquare} />
                   <span>125 sqm</span>
-                </div>
-              </div>
-              <div className="home-page__slider-item">
-                <div>
+                </li>
+                <li className="home-page__features_grid-item">
+                  <FontAwesomeIcon icon={faSeedling} />
+                  <span>Outdoor Space</span>
+                </li>
+                <li className="home-page__features_grid-item">
+                  <FontAwesomeIcon icon={faUtensils} />
+                  <span>BBQ facilities</span>
+                </li>
+                <li className="home-page__features_grid-item">
+                  <FontAwesomeIcon icon={faWifi} />
+                  <span>Free Wifi</span>
+                </li>
+                <li className="home-page__features_grid-item">
+                  <FontAwesomeIcon icon={faParking} />
+                  <span>Free Parking</span>
+                </li>
+                <li className="home-page__features_grid-item">
                   <FontAwesomeIcon icon={faSnowflake} />
                   <span>Air conditioning</span>
-                </div>
-              </div>
-            </Slider>
-          ) : (
-            <ul className="home-page__grid-container__features">
-              <li className="home-page__features_grid-item">
-                <FontAwesomeIcon icon={faHome} />
-                <span>Whole apartment</span>
-              </li>
-              <li className="home-page__features_grid-item">
-                <FontAwesomeIcon icon={faVectorSquare} />
-                <span>125 sqm</span>
-              </li>
-              <li className="home-page__features_grid-item">
-                <FontAwesomeIcon icon={faSeedling} />
-                <span>Outdoor Space</span>
-              </li>
-              <li className="home-page__features_grid-item">
-                <FontAwesomeIcon icon={faUtensils} />
-                <span>BBQ facilities</span>
-              </li>
-              <li className="home-page__features_grid-item">
-                <FontAwesomeIcon icon={faWifi} />
-                <span>Free Wifi</span>
-              </li>
-              <li className="home-page__features_grid-item">
-                <FontAwesomeIcon icon={faParking} />
-                <span>Free Parking</span>
-              </li>
-              <li className="home-page__features_grid-item">
-                <FontAwesomeIcon icon={faSnowflake} />
-                <span>Air conditioning</span>
-              </li>
-              <li className="home-page__features_grid-item">
-                <FontAwesomeIcon icon={faBath} />
-                <span>Two Bathrooms</span>
-              </li>
-            </ul>
-          )}
+                </li>
+                <li className="home-page__features_grid-item">
+                  <FontAwesomeIcon icon={faBath} />
+                  <span>Two Bathrooms</span>
+                </li>
+              </ul>
+            )}
+          </div>
 
           <div className="home-page__grid-container__description">
             <div className="home-page__title-text__container">

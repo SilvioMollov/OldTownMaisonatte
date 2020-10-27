@@ -14,7 +14,6 @@ class NavBar extends Component {
             onClick={this.props.onClick}
           >
             Home
-            <i className="fas fa-user"></i>
           </NavLink>
         </li>
         <li>
@@ -24,7 +23,6 @@ class NavBar extends Component {
             onClick={this.props.onClick}
           >
             Gallery
-            <i className="fas fa-heart"></i>
           </NavLink>
         </li>
         <li>
@@ -34,7 +32,6 @@ class NavBar extends Component {
             onClick={this.props.onClick}
           >
             About Us
-            <i className="fas fa-users"></i>
           </NavLink>
         </li>
       </>
