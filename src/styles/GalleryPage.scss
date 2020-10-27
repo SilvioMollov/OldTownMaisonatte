@@ -8,6 +8,7 @@
 
   h2 {
     @include headline-borders;
+    margin-bottom: $margin-bottom;
   }
 
   .gallery-page__grid-container {

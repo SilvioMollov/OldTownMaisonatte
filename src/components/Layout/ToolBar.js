@@ -9,7 +9,7 @@ const toolbar = (props) => {
   return (
     <header className={"toolbar"}>
       <nav className={"toolbar__navigation"}>
-        <DrawerToggle toggleDrawer={props.drawerClickHandler} />
+        <DrawerToggle isOpen={props.isOpen} toggleDrawer={props.drawerClickHandler} />
 
         <div className="toolbar__logo">
           <NavLink to="/home" className="toolbar__navLink">

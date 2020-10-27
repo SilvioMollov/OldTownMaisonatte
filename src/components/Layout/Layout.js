@@ -22,7 +22,10 @@ class Layout extends Component {
   render() {
     return (
       <>
-        <ToolBar drawerClickHandler={this.drawerOpenHandler} />
+        <ToolBar
+          isOpen={this.state.showSideDrawer}
+          drawerClickHandler={this.drawerOpenHandler}
+        />
         <SideDrawer
           isOpen={this.state.showSideDrawer}
           clicked={this.drawerCloseHandler}

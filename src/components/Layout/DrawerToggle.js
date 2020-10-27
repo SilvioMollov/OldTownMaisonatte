@@ -1,12 +1,21 @@
 import React from "react";
 import "../../styles/DrawerToggle.scss";
 
-const drawerToggle = (props) => (
-  <div className={"DrawerToggle"} onClick={props.toggleDrawer}>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-);
+const drawerToggle = (props) => {
+  console.log(props.isOpen);
+  let className = "";
+
+  if (props.isOpen) {
+    className = "change";
+  }
+
+  return (
+    <div className={`DrawerToggle ${className}`} onClick={props.toggleDrawer}>
+      <div className={`bar1 ${className}`}></div>
+      <div className={`bar2 ${className}`}></div>
+      <div className={`bar3 ${className}`}></div>
+    </div>
+  );
+};
 
 export default drawerToggle;

@@ -9,6 +9,7 @@ class Gallery extends Component {
     const opitons = {
       buttons: {
         showFullscreenButton: true,
+        
       },
     };
     return (

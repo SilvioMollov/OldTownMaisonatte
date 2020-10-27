@@ -1,6 +1,10 @@
+@import "./variables/variables";
+
 .SideDrawer {
   height: 100%;
-  background: coral;
+  width: 100%;
+  background: $body-color;
+  display: inline-flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -9,18 +13,67 @@
   transform: translateX(-100%);
   min-width: 200px;
 
+  .side-drawer_close-button {
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+    border: transparent;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    svg {
+      font-size: 40px;
+      color: white;
+    }
+  }
+
   ul {
-    height: 15%;
+    width: 100%;
+    padding: 15px;
+    padding-top: 155px;
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    font-size: 20px;
 
-    
+    li {
+      padding: 10px;
+      a {
+        min-width: 150px;
+      }
+    }
+  }
+
+  .side-drawer__logo {
+    width: 100%;
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    span {
+      display: block;
+      word-break: break-all;
+      text-decoration: none;
+      font-size: 30px;
+      font-weight: 200;
+      color: whitesmoke;
+      font-family: "Dancing Script", cursive;
+    }
   }
 }
 
 .SideDrawer.Open {
   transform: translateX(0);
+  
 }
