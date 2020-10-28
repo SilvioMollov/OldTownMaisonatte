@@ -2,7 +2,6 @@ import React from "react";
 import "../../styles/DrawerToggle.scss";
 
 const drawerToggle = (props) => {
-  console.log(props.isOpen);
   let className = "";
 
   if (props.isOpen) {

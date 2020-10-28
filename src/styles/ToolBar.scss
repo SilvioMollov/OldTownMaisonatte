@@ -8,7 +8,7 @@
   background-color: $body-color;
 
   .toolbar__navigation {
-    padding: 15px;
+    padding: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,12 +16,12 @@
 
     .toolbar__logo {
       a {
-        &:before {
-          content: "-";
-        }
+        &:before,
         &:after {
           content: "-";
+          padding: 0 5px;
         }
+
         text-decoration: none;
         font-size: 30px;
         font-weight: 200;

@@ -20,6 +20,13 @@ class Layout extends Component {
   };
 
   render() {
+    const { showSideDrawer } = this.state;
+    const body = document.querySelector("body");
+
+    showSideDrawer
+      ? (body.style = "overflow: hidden")
+      : (body.style = "overflow: auto");
+    
     return (
       <>
         <ToolBar

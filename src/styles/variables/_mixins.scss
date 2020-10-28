@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import "./variables";
 
 @mixin headline-borders {
   border-bottom: 2px solid;
   border-right: 2px solid;
-  margin: 10px auto;
+  margin: 0px auto;
+  margin-bottom: $header-spacer;
   padding: 0 10px;
   font-size: 2.5em;
   font-weight: 200;
