@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import "../../styles/Layout.scss";
+import { withTranslation } from "react-i18next";
+import { withRouter } from "react-router";
+
 import ToolBar from "./ToolBar";
 import Backdrop from "../Utilities/BackDrop";
 import SideDrawer from "./SideDrawer";
@@ -7,6 +10,22 @@ import SideDrawer from "./SideDrawer";
 class Layout extends Component {
   state = {
     showSideDrawer: false,
+    bgn: true,
+  };
+
+  languageSwitchHandler = (e) => {
+    const { bgn } = this.state;
+    const { i18n } = this.props;
+
+    this.setState({ bgn: !bgn }, () => {
+      if (bgn) {
+        i18n.changeLanguage("bg");
+      } else {
+        i18n.changeLanguage("en");
+      }
+    });
+
+    // console.log(location);
   };
 
   drawerCloseHandler = () => {
@@ -26,10 +45,11 @@ class Layout extends Component {
     showSideDrawer
       ? (body.style = "overflow: hidden")
       : (body.style = "overflow: auto");
-    
+
     return (
       <>
         <ToolBar
+          languageSwitchHandler={this.languageSwitchHandler}
           isOpen={this.state.showSideDrawer}
           drawerClickHandler={this.drawerOpenHandler}
         />
@@ -48,4 +68,4 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+export default withTranslation()(withRouter(Layout));

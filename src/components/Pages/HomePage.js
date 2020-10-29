@@ -66,9 +66,8 @@ class HomePage extends Component {
 
   render() {
     const { slidesToShow, initFeatureSlider } = this.state;
-    const { t, i18n } = this.props;
+    const { t } = this.props;
 
-    console.log(i18n);
     //change language
 
     const headSliderSettings = {

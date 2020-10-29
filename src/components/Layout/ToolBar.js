@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/ToolBar.scss";
 import NavBar from "./NavBar";
 import DrawerToggle from "./DrawerToggle";
+import LanguageSwitcher from "../Utilities/LanguageSwitcher";
 
 import { NavLink } from "react-router-dom";
 
@@ -9,7 +10,10 @@ const toolbar = (props) => {
   return (
     <header className={"toolbar"}>
       <nav className={"toolbar__navigation"}>
-        <DrawerToggle isOpen={props.isOpen} toggleDrawer={props.drawerClickHandler} />
+        <DrawerToggle
+          isOpen={props.isOpen}
+          toggleDrawer={props.drawerClickHandler}
+        />
 
         <div className="toolbar__logo">
           <NavLink to="/home" className="toolbar__navLink">
@@ -18,6 +22,8 @@ const toolbar = (props) => {
         </div>
         <div className="toolbar__spacer"></div>
         <NavBar />
+
+        <LanguageSwitcher languageHandler={props.languageSwitchHandler} />
       </nav>
     </header>
   );

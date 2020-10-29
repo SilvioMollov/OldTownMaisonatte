@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { withTranslation } from "react-i18next";
 
 import "../../styles/NavBar.scss";
 
 class NavBar extends Component {
   render() {
-    let userRoutes = (
-      <>
+    const { t } = this.props;
+
+    return (
+      <ul className="navbar__items">
         <li>
           <NavLink
             to="/home"
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >
-            Home
+            {t("Home")}
           </NavLink>
         </li>
         <li>
@@ -22,7 +25,7 @@ class NavBar extends Component {
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >
-            Gallery
+            {t("Gallery")}
           </NavLink>
         </li>
         <li>
@@ -31,14 +34,12 @@ class NavBar extends Component {
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >
-            About Us
+            {t("Contacts")}
           </NavLink>
         </li>
-      </>
+      </ul>
     );
-
-    return <ul className="navbar__items">{userRoutes}</ul>;
   }
 }
 
-export default NavBar;
+export default withTranslation("NavigationBar")(NavBar);

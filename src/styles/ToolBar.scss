@@ -33,7 +33,9 @@
 }
 
 @media (max-width: 699px) {
-  .toolbar__logo {
-    margin: auto;
+  .toolbar__navigation {
+    .toolbar__logo {
+      margin: 10px auto;
+    }
   }
 }

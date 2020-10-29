@@ -1,6 +1,6 @@
 {
   "HomePage": {
-    "Most Popular Features": "Most popular Features 1",
+    "Most Popular Features": "Most popular Features",
     "Check out more pictures!": "Check out more pictures!",
     "Whole apartment": "Whole apartment",
     "BBQ facilities": "BBQ facilities",
@@ -27,5 +27,19 @@
     "Plovdiv Airport-description": "Plovdiv Airport is the airport of the second largest city in Bulgaria, Plovdiv and is the country's 4th busiest behind Sofia, Burgas and Varna. It may be referred to as Plovdiv Krumovo Airport, after a small village located 6 km south-east away from the city on the main Plovdiv-Asenovgrad highway.",
     "Kapana-Creative District": "Kapana - Creative District",
     "Kapana-Creative District-description": "The purpose of the Project Kapana Creative District is to develop the potential of this central urban zone as an area of discovery, innovation and experimentation in the sphere of culture, cultural management and the creative industries."
+  },
+  "NavigationBar": {
+    "Home": "Home",
+    "Gallery": "Gallery",
+    "Contacts": "Contacts"
+  },
+  "Gallery": {
+    "Gallery": "Gallery",
+    "The Dining area": "The Dining area",
+    "The Outdoor space": "The Outdoor space",
+    "The Balcony": "The Balcony",
+    "The Master Bedroom": "The Master Bedroom",
+    "The Living Room": "The Living Room",
+    "The Kitchen and Living room": "The Kitchen and Living room"
   }
 }
