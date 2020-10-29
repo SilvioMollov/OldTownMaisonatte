@@ -10,7 +10,7 @@ import SideDrawer from "./SideDrawer";
 class Layout extends Component {
   state = {
     showSideDrawer: false,
-    bgn: true,
+    bgn: false,
   };
 
   languageSwitchHandler = (e) => {
@@ -39,7 +39,7 @@ class Layout extends Component {
   };
 
   render() {
-    const { showSideDrawer } = this.state;
+    const { showSideDrawer, bgn } = this.state;
     const body = document.querySelector("body");
 
     showSideDrawer
@@ -49,6 +49,7 @@ class Layout extends Component {
     return (
       <>
         <ToolBar
+          isBg={bgn}
           languageSwitchHandler={this.languageSwitchHandler}
           isOpen={this.state.showSideDrawer}
           drawerClickHandler={this.drawerOpenHandler}

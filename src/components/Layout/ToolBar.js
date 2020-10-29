@@ -2,7 +2,6 @@ import React from "react";
 import "../../styles/ToolBar.scss";
 import NavBar from "./NavBar";
 import DrawerToggle from "./DrawerToggle";
-import LanguageSwitcher from "../Utilities/LanguageSwitcher";
 
 import { NavLink } from "react-router-dom";
 
@@ -20,10 +19,16 @@ const toolbar = (props) => {
             Old Town Maisonette
           </NavLink>
         </div>
-        <div className="toolbar__spacer"></div>
-        <NavBar />
 
-        <LanguageSwitcher languageHandler={props.languageSwitchHandler} />
+        <div className="toolbar__buttons-container">
+          <NavBar />
+
+          <div className="toolbar__buttons-lang">
+            <button onClick={props.languageSwitchHandler}>
+              {props.isBg ? "BG" : "EN"}
+            </button>
+          </div>
+        </div>
       </nav>
     </header>
   );

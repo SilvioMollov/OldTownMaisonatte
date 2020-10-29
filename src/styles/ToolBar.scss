@@ -14,6 +14,36 @@
     align-items: center;
     border-bottom: 1px solid white;
 
+    .toolbar__buttons-container {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .toolbar__buttons-lang {
+        button {
+          display: inline-block;
+          color: white;
+          padding: 10px;
+          margin: 10px;
+          text-decoration: none;
+          right: 0;
+          border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+          border-bottom: solid 2px white;
+          border-left: solid 2px white;
+          transition: all 0.2s ease-in-out;
+          background-color: transparent;
+          border-right: 1px solid white;
+          border-top: 1px solid white;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+
     .toolbar__logo {
       a {
         &:before,

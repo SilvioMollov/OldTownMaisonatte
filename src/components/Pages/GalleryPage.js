@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
+
 import img1 from "../../assets/dining.jpg";
 import img2 from "../../assets/DSC09016.jpg";
 import img3 from "../../assets/DSC09025.jpg";
@@ -12,18 +15,27 @@ import img9 from "../../assets/DSC09124.jpg";
 import img10 from "../../assets/DSC09127.jpg";
 
 import "../../styles/GalleryPage.scss";
-import { SRLWrapper } from "simple-react-lightbox";
+// import { SRLWrapper } from "simple-react-lightbox";
 import { withTranslation } from "react-i18next";
 
 class Gallery extends Component {
+  state = {
+    photoIndex: 0,
+    isOpen: false,
+  };
+
+  onOpenHandler = (id) => {
+    console.log(id);
+    this.setState({
+      isOpen: true,
+      photoIndex: id - 1,
+    });
+  };
+
   render() {
     const { t } = this.props;
-
-    const opitons = {
-      buttons: {
-        showFullscreenButton: true,
-      },
-    };
+    const { photoIndex, isOpen } = this.state;
+    const body = document.querySelector("body");
 
     const images = [
       {
@@ -88,24 +100,48 @@ class Gallery extends Component {
       },
     ];
 
-    console.log(images);
+    isOpen
+      ? (body.style = "overflow: hidden")
+      : (body.style = "overflow: auto");
 
     return (
       <div className="gallery-page__container">
         <h2>{t("Gallery")}</h2>
-        <SRLWrapper opitons={opitons}>
-          <div className="gallery-page__grid-container">
-            {images.map(({ src, title, id }) => {
-              return (
-                <div className="gallery-page__grid-item" key={id}>
-                  <a href={src} data-attribute="SRL">
-                    <img src={src} alt={title} />
-                  </a>
-                </div>
-              );
-            })}
-          </div>
-        </SRLWrapper>
+        <div className="gallery-page__grid-container">
+          {images.map(({ src, title, id }) => {
+            return (
+              <div
+                className="gallery-page__grid-item"
+                key={id}
+                onClick={() => this.onOpenHandler(id)}
+              >
+                <img src={src} alt={title} />
+              </div>
+            );
+          })}
+        </div>
+        {isOpen && (
+          <Lightbox
+            clickOutsideToClose={true}
+            imageTitle={images[photoIndex].title}
+            mainSrc={images[photoIndex].src}
+            nextSrc={images[(photoIndex + 1) % images.length].src}
+            prevSrc={
+              images[(photoIndex + images.length - 1) % images.length].src
+            }
+            onCloseRequest={() => this.setState({ isOpen: false })}
+            onMovePrevRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + images.length - 1) % images.length,
+              })
+            }
+            onMoveNextRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + 1) % images.length,
+              })
+            }
+          />
+        )}
       </div>
     );
   }
