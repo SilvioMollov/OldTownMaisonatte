@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 @import "./variables";
 
-@mixin headline-borders {
+@mixin headline-borders() {
   border-bottom: 2px solid;
   border-right: 2px solid;
   margin: 0px auto;
@@ -9,7 +10,6 @@
   padding: 0 10px;
   font-size: 2.5em;
   font-weight: 200;
-  font-family: "Architects Daughter", cursive;
 }
 
 @mixin sub-headline-borders {

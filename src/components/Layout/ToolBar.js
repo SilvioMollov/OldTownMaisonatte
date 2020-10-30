@@ -25,7 +25,7 @@ const toolbar = (props) => {
 
           <div className="toolbar__buttons-lang">
             <button onClick={props.languageSwitchHandler}>
-              {props.isBg ? "BG" : "EN"}
+              {props.isEng ? "EN" : "BG"}
             </button>
           </div>
         </div>

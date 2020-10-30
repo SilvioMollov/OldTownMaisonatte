@@ -1,6 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap");
+
 * {
   box-sizing: border-box;
   outline: none;
+}
+
+body {
+  &.bg {
+    h1,
+    h2,
+    h3 {
+      font-family: "Caveat", cursive;
+    }
+  }
+
+  &.en {
+    h1,
+    h2,
+    h3 {
+      font-family: "Architects Daughter", cursive;
+    }
+  }
+  p {
+    font-family: "Open Sans", sans-serif;
+  }
 }
 
 .App {

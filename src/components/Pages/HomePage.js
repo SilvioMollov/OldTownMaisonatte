@@ -122,13 +122,22 @@ class HomePage extends Component {
               {...headSliderSettings}
               className="home-page__slider slider"
             >
-              <div>
+              <div className="home-page__slide">
+                <div className="home-page__slider-description">
+                  <p>{t("Master Bedroom with a beautiful balcony")}</p>
+                </div>
                 <img src={Img1} alt="pic1"></img>
               </div>
-              <div>
+              <div className="home-page__slide">
+                <div className="home-page__slider-description">
+                  <p>{t("A specious living room")}</p>
+                </div>
                 <img src={Img2} alt="pic2"></img>
               </div>
-              <div>
+              <div className="home-page__slide">
+                <div className="home-page__slider-description">
+                  <p>{t("A small outdoor space, made for relaxation")}</p>
+                </div>
                 <img src={Img3} alt="pic3"></img>
               </div>
             </Slider>

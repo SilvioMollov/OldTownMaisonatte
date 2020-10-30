@@ -63,14 +63,22 @@
 }
 
 @media (max-width: 699px) {
-  .toolbar__navigation {
+  .toolbar {
+    .toolbar__navigation {
+      .toolbar__buttons-container {
+        .toolbar__buttons-lang {
+          button {
+            margin: 0;
+          }
+        }
+      }
 
-    .toolbar__buttons-lang {
-      
-    }
-
-    .toolbar__logo {
-      margin: 10px auto;
+      .toolbar__logo {
+        margin: 10px auto;
+        a {
+          font-size: 25px;
+        }
+      }
     }
   }
 }

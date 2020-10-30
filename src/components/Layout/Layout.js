@@ -10,18 +10,25 @@ import SideDrawer from "./SideDrawer";
 class Layout extends Component {
   state = {
     showSideDrawer: false,
-    bgn: false,
+    eng: false,
   };
 
   languageSwitchHandler = (e) => {
-    const { bgn } = this.state;
+    const htmlLang = document.querySelector("html");
+    const body = document.querySelector("body");
+
+    const { eng } = this.state;
     const { i18n } = this.props;
 
-    this.setState({ bgn: !bgn }, () => {
-      if (bgn) {
-        i18n.changeLanguage("bg");
-      } else {
+    this.setState({ eng: !eng }, () => {
+      if (eng) {
+        body.className = "en";
         i18n.changeLanguage("en");
+        htmlLang.attributes.lang.value = "en";
+      } else {
+        body.className = "bg";
+        i18n.changeLanguage("bg");
+        htmlLang.attributes.lang.value = "bg";
       }
     });
 
@@ -39,7 +46,7 @@ class Layout extends Component {
   };
 
   render() {
-    const { showSideDrawer, bgn } = this.state;
+    const { showSideDrawer, eng } = this.state;
     const body = document.querySelector("body");
 
     showSideDrawer
@@ -49,7 +56,7 @@ class Layout extends Component {
     return (
       <>
         <ToolBar
-          isBg={bgn}
+          isEng={eng}
           languageSwitchHandler={this.languageSwitchHandler}
           isOpen={this.state.showSideDrawer}
           drawerClickHandler={this.drawerOpenHandler}
