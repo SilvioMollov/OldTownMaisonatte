@@ -25,7 +25,6 @@ class Gallery extends Component {
   };
 
   onOpenHandler = (id) => {
-    console.log(id);
     this.setState({
       isOpen: true,
       photoIndex: id - 1,

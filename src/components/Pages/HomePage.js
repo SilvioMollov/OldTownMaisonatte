@@ -41,7 +41,6 @@ class HomePage extends Component {
   componentDidMount() {
     this.trackScreenSizeListener();
     window.addEventListener("resize", this.trackScreenSizeListener);
-    // this.props.i18n.changeLanguage("bg");
   }
 
   trackScreenSizeListener = () => {

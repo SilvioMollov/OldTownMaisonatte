@@ -30,11 +30,11 @@ class NavBar extends Component {
         </li>
         <li>
           <NavLink
-            to="/about"
+            to="/reservation"
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >
-            {t("Contacts")}
+            {t("Reservation")}
           </NavLink>
         </li>
       </ul>

@@ -1,0 +1,127 @@
+@import "./variables/variables";
+@import "./variables/mixins";
+
+.reservation-page__container {
+  padding: $padding-body-container;
+  max-width: 1500px;
+  margin: auto;
+
+  h2 {
+    @include headline-borders;
+    margin-bottom: $margin-bottom;
+  }
+
+  .reservation-page__pricing-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    .reservation-page__option-container {
+      padding: 15px;
+      border: 2px solid;
+
+      h1 {
+        border-radius: 255px 15px 225px 5px/15px 225px 15px 255px;
+        border-bottom: 2px solid $dark-brown;
+      }
+
+      .reservation-page__features {
+        min-height: 100px;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 2px solid $dark-brown;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        transition: all 1s ease-in-out;
+
+        // &.flip {
+        //   transform: rotateY(360deg);
+        // }
+
+        .alert-enter {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        .alert-enter-active {
+          opacity: 1;
+          transform: translateX(0);
+          transition: opacity 300ms, transform 300ms;
+        }
+        .alert-exit {
+          opacity: 1;
+        }
+        .alert-exit-active {
+          opacity: 0;
+          transform: scale(0.9);
+          transition: opacity 300ms, transform 300ms;
+        }
+
+        ul {
+          padding-left: 20%;
+
+          .X {
+            list-style-type: none;
+            text-align: left;
+            position: relative;
+            margin: 2px;
+            padding: 10px 20px;
+            font-family: sans-serif;
+            margin: 0;
+
+            &::before {
+              content: "\274C";
+              position: absolute;
+              border-color: red;
+              top: 60%;
+              left: -0.8em;
+              margin-top: -1em;
+            }
+          }
+
+          .check {
+            list-style-type: none;
+            text-align: left;
+            position: relative;
+            margin: 2px;
+            padding: 10px 20px;
+            font-family: sans-serif;
+            margin: 0;
+
+            &::before {
+              content: "";
+              position: absolute;
+              border-color: #009933;
+              border-style: solid;
+              border-width: 0 0.3em 0.25em 0;
+              height: 1em;
+              top: 50%;
+              left: -0.4em;
+              margin-top: -1em;
+              transform: rotate(45deg);
+              width: 0.5em;
+            }
+          }
+        }
+      }
+
+      button {
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+        text-decoration: none;
+        right: 0;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        border-bottom: solid 2px;
+        border-left: solid 2px;
+        transition: all 0.2s ease-in-out;
+        background-color: transparent;
+        border-right: 1px solid;
+        border-top: 1px solid;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
