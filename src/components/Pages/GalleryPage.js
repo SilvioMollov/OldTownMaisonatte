@@ -13,6 +13,20 @@ import img7 from "../../assets/DSC09108.jpg";
 import img8 from "../../assets/DSC09113.jpg";
 import img9 from "../../assets/DSC09124.jpg";
 import img10 from "../../assets/DSC09127.jpg";
+import img11 from "../../assets/IMG_3128.jpg";
+import img12 from "../../assets/IMG_3129.jpg";
+import img13 from "../../assets/IMG_3148.jpg";
+import img14 from "../../assets/IMG_3152.jpg";
+import img15 from "../../assets/IMG_20200209_173215.jpg";
+import img16 from "../../assets/IMG_20200209_173515.jpg";
+import img17 from "../../assets/IMG_20200209_174223.jpg";
+import img18 from "../../assets/IMG_20200209_174244.jpg";
+import img19 from "../../assets/IMG_20200209_174715.jpg";
+import img20 from "../../assets/IMG_20200209_175521.jpg";
+import img21 from "../../assets/IMG_20200209_175627.jpg";
+import img22 from "../../assets/IMG_20200209_180914.jpg";
+import img23 from "../../assets/IMG_20200209_181158.jpg";
+import img24 from "../../assets/IMG_20200209_181309.jpg";
 
 import "../../styles/GalleryPage.scss";
 // import { SRLWrapper } from "simple-react-lightbox";
@@ -96,6 +110,90 @@ class Gallery extends Component {
         src: img10,
         title: t("The Kitchen and Living room"),
         description: "Kitchen from the far-back",
+      },
+      {
+        id: 11,
+        src: img11,
+        title: "Ketchin",
+        description: "The whole Kitchen area",
+      },
+      {
+        id: 12,
+        src: img12,
+        title: "Dining Table",
+        description: "Dining Table",
+      },
+      {
+        id: 13,
+        src: img13,
+        title: "Dishwasher",
+        description: "Dishwasher",
+      },
+      {
+        id: 14,
+        src: img14,
+        title: "Kitchen",
+        description: "Kitchen from the side angle",
+      },
+      {
+        id: 15,
+        src: img15,
+        title: "Living room",
+        description: "Living room with the staircase in sight",
+      },
+      {
+        id: 16,
+        src: img16,
+        title: "Guest Bedroom",
+        description: "Guest Bedroom",
+      },
+      {
+        id: 17,
+        src: img17,
+        title: "Second floor Bathroom and toilet",
+        description: "Second floor Bathroom and toilet",
+      },
+      {
+        id: 18,
+        src: img18,
+        title: "Second floor Bathroom and toilet",
+        description: "Second floor Bathroom and toilet",
+      },
+      {
+        id: 19,
+        src: img19,
+        title: "Desk and mirror",
+        description: "Desk and mirror",
+      },
+      {
+        id: 20,
+        src: img20,
+        title: "First floor toilet",
+        description: "First floor toilet",
+      },
+      {
+        id: 21,
+        src: img21,
+        title: "Thermostat",
+        description: "Thermostat",
+      },
+      {
+        id: 22,
+        src: img22,
+        title: "Front Facede",
+        description: "Front Facede",
+      },
+      {
+        id: 23,
+        src: img23,
+        title: "Garage Door",
+        description: "Garage Door",
+      },
+      {
+        id: 24,
+        src: img24,
+        title: "Stair Case",
+        description: "Stair Case",
       },
     ];
 
