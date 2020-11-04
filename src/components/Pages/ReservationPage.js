@@ -1,11 +1,39 @@
 import React, { Component } from "react";
 import "../../styles/ReservationPage.scss";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy } from "@fortawesome/free-regular-svg-icons";
+
 import viber from "../../assets/viber.svg";
 import telephone from "../../assets/telephone.svg";
 import email from "../../assets/email.svg";
 
 class ReservationPage extends Component {
+  onCopyTextHandler = (textValue, e) => {
+    e.persist();
+    let textArea = document.createElement("textarea");
+    textArea.value = textValue;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+      let successful = document.execCommand("copy");
+
+      successful
+        ? (e.target.style = "color: #CC9966")
+        : (e.target.style = "color: red");
+
+      setTimeout(() => {
+        e.target.style = "color:white";
+      }, 1000);
+    } catch (err) {
+      console.log("Oops, unable to copy");
+    }
+
+    document.body.removeChild(textArea);
+  };
+
   render() {
     return (
       <div className="reservation-page__container">
@@ -61,25 +89,40 @@ class ReservationPage extends Component {
           <div className="reservation-page__contacts">
             <h2>Contacts us with a click!</h2>
             <div className="reservation-page_container">
-              <div className="reservation-page__contacts-item">
-                <img src={viber} alt="viber"></img>
+              <div className="reservation-page__contacts-item viber">
                 <a href="viber://chat/?number=%2B359886878677">
-                  Chat with us on Viber
+                  <img src={viber} alt="viber"></img>
+                  <span>Chat with us on Viber</span>
                 </a>
               </div>
               <div className="reservation-page__contacts-item">
-                <img src={telephone} alt="viber"></img>
-                <a href="tel:+359886878677">Call us now!</a>
+                <a href="tel:+359886878677">
+                  <img src={telephone} alt="viber"></img>
+                  <span id="phone">+359886878677</span>
+                </a>
+                <FontAwesomeIcon
+                  className="reservation-page__copy-button"
+                  icon={faCopy}
+                  onClick={(e) => this.onCopyTextHandler("+359886878677", e)}
+                ></FontAwesomeIcon>
               </div>
+
               <div className="reservation-page__contacts-item">
-                <img src={email} alt="viber"></img>
                 <a
                   href="mailto:vasil97@yahoo.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Send us an Email!
+                  <img src={email} alt="viber"></img>
+                  <span id="email">vasil97@yahoo.com</span>
                 </a>
+                <FontAwesomeIcon
+                  className="reservation-page__copy-button"
+                  icon={faCopy}
+                  onClick={(e) =>
+                    this.onCopyTextHandler("vasil97@yahoo.com", e)
+                  }
+                ></FontAwesomeIcon>
               </div>
             </div>
           </div>
