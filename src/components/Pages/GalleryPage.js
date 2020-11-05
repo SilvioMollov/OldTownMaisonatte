@@ -31,11 +31,15 @@ import img24 from "../../assets/IMG_20200209_181309.jpg";
 import "../../styles/GalleryPage.scss";
 // import { SRLWrapper } from "simple-react-lightbox";
 import { withTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExpand } from "@fortawesome/free-solid-svg-icons";
+import { faCompress } from "@fortawesome/free-solid-svg-icons";
 
 class Gallery extends Component {
   state = {
     photoIndex: 0,
     isOpen: false,
+    isFullscreen: false,
   };
 
   onOpenHandler = (id) => {
@@ -45,9 +49,36 @@ class Gallery extends Component {
     });
   };
 
+  onFullScreenHandler = () => {
+    const currentImg = document.querySelector(".ril-outer");
+    const { isFullscreen } = this.state;
+
+    this.setState({ isFullscreen: !isFullscreen }, () => {
+      if (this.state.isFullscreen) {
+        if (currentImg.requestFullscreen) {
+          currentImg.requestFullscreen();
+        } else if (currentImg.webkitRequestFullscreen) {
+          currentImg.webkitRequestFullscreen();
+        } else if (currentImg.msRequestFullscreen) {
+          currentImg.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          /* Safari */
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          /* IE11 */
+          document.msExitFullscreen();
+        }
+      }
+    });
+  };
+
   render() {
     const { t } = this.props;
-    const { photoIndex, isOpen } = this.state;
+    const { photoIndex, isOpen, isFullscreen } = this.state;
     const body = document.querySelector("body");
 
     const images = [
@@ -237,6 +268,14 @@ class Gallery extends Component {
                 photoIndex: (photoIndex + 1) % images.length,
               })
             }
+            toolbarButtons={[
+              <FontAwesomeIcon
+                className="ril__builtinButton ril__toolbarItemChild"
+                style={{ padding: "1px 8px", width: "35px" }}
+                icon={isFullscreen ? faCompress : faExpand}
+                onClick={this.onFullScreenHandler}
+              ></FontAwesomeIcon>,
+            ]}
           />
         )}
       </div>

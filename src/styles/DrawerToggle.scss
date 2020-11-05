@@ -3,19 +3,18 @@
     transform: scale(1.2);
   }
 
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
-
 
   &.change {
     transition-delay: 0.4s;
     transform: rotate(45deg);
   }
   div {
-    width: 35px;
+    width: 30px;
     height: 3px;
     background-color: white;
     margin: 7px 0;
-    cursor: pointer;
   }
 
   .bar1 {
@@ -47,6 +46,5 @@
 @media (min-width: 699px) {
   .DrawerToggle {
     display: none;
-    
   }
 }

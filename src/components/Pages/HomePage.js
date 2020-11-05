@@ -92,16 +92,13 @@ class HomePage extends Component {
     };
 
     const landmarksSliderSettings = {
-      // className: "center",
-      // centerMode: true,
-      // centerPadding: "30px",
       dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: slidesToShow,
       slidesToScroll: 1,
       arrows: true,
-      autoplay: true,
+      autoplay: false,
     };
 
     return (

@@ -44,5 +44,25 @@
     "The Master Bedroom": "The Master Bedroom",
     "The Living Room": "The Living Room",
     "The Kitchen and Living room": "The Kitchen and Living room"
+  },
+  "Reservation": {
+    "Pricing": "Pricing",
+    "Whole Apartment": "Whole аpartment",
+    "Whole Apartment-description": "If you are brining the whole family or a lot of friends, this would be the prefered option, since it adds up two more beds with everyhing else from the first floor",
+    "Kitchen": "Kitchen",
+    "Bathroom": "Bathroom",
+    "Flat-screen TV": "Flat-screen TV",
+    "Outdoor dining area": "Outdoor dining area",
+    "Sofa bed": "Sofa bed",
+    "Two bedrooms": "Two bedrooms",
+    "Balcony": "Balcony",
+    "Second Bathroom": "Second Bathroom",
+    "Second Bedroom": "Second Bedroom",
+    "Price-Night-Whole": "220 BGN",
+    "Price-Night-Half": "160 BGN",
+    "First floor only": "First floor only",
+    "Half Apartment-description": "Perfect for couples, without the extra second floor you save some money from the price and you still get an amazing experience with everything in need.",
+    "Contacts us with a click!": "Contacts us with a click!",
+    "Chat with us on Viber": "Chat with us on Viber"
   }
 }
