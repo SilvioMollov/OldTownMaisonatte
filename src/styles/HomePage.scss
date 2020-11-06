@@ -50,7 +50,6 @@
       .home-page__slide {
         position: relative;
 
-
         img {
           margin: 0 auto;
           width: 100%;
@@ -200,6 +199,7 @@
       grid-column: 2;
       grid-row: 1 / span 2;
       align-self: center;
+
       h2 {
         @include headline-borders;
         color: white;
@@ -227,19 +227,19 @@
   }
 
   .home-page__landmarks_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     padding: $padding-body-container;
     margin-bottom: $margin-body-bottom-container;
     gap: 15px;
 
     .home-page__landmarks_slider {
-      grid-row: 2;
-      grid-column: 1 / span 3;
       padding: 0 45px;
 
       .slick-list {
         overflow: hidden;
+
+        .slick-track {
+          display: block;
+        }
       }
 
       button.slick-arrow {
@@ -263,35 +263,45 @@
     }
 
     .home-page__landmarks_landmark {
-      padding: 15px;
       a {
+        padding: 10px;
+        min-height: 350px;
+        display: grid !important;
+        grid-template-rows: 70px 70px 1fr;
+        gap: 15px;
+        justify-content: center;
         text-decoration: none;
-        color: #3f3f41;
-        cursor: pointer;
+        color: #333;
+
+        &:hover {
+          img {
+            transform: scale(1.2);
+          }
+        }
+
+        span {
+          align-self: baseline;
+          grid-row: 1;
+          font-family: "Architects Daughter", cursive;
+          font-size: 1.5em;
+        }
+
+        img {
+          width: 50px;
+          grid-row: 2;
+          margin: 10px auto;
+        }
+
+        p {
+          align-self: baseline;
+          margin: 0;
+          grid-row: 3;
+        }
       }
     }
 
-    span {
-      font-family: "Architects Daughter", cursive;
-      font-size: 1.5em;
-    }
-
-    p {
-      margin: 0;
-    }
-
     h2 {
-      grid-row: 1;
-      grid-column: 1 / span 3;
       @include headline-borders;
-    }
-    img {
-      width: 50px;
-      margin: 10px auto;
-    }
-
-    img:hover {
-      transform: scale(1.2);
     }
   }
 }

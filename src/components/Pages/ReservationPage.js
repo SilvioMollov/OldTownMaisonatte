@@ -22,11 +22,13 @@ class ReservationPage extends Component {
     try {
       let successful = document.execCommand("copy");
 
+      console.log(successful);
+
       successful
         ? (e.target.style = "color: #CC9966")
         : (e.target.style = "color: red");
 
-      setTimeout(() => {
+      window.setTimeout(() => {
         e.target.style = "color:white";
       }, 1000);
     } catch (err) {
@@ -54,7 +56,7 @@ class ReservationPage extends Component {
                 <li className="check">{t("Flat-screen TV")}</li>
                 <li className="check">{t("Outdoor dining area")}</li>
                 <li className="check">{t("Sofa bed")}</li>
-                <li className="check">{t("Two bedrooms")}</li>
+                <li className="check">{t("One bedroom")}</li>
                 <li className="check">{t("Balcony")}</li>
                 <li className="check">{t("Second Bathroom")}</li>
                 <li className="check">{t("Second Bedroom")}</li>
@@ -74,7 +76,7 @@ class ReservationPage extends Component {
                 <li className="check">{t("Flat-screen TV")}</li>
                 <li className="check">{t("Outdoor dining area")}</li>
                 <li className="check">{t("Sofa bed")}</li>
-                <li className="check">{t("Two bedrooms")}</li>
+                <li className="check">{t("One Bedroom")}</li>
                 <li className="X">{t("Balcony")}</li>
                 <li className="X">{t("Second Bathroom")}</li>
                 <li className="X">{t("Second Bedroom")}</li>

@@ -99,6 +99,7 @@ class HomePage extends Component {
       slidesToScroll: 1,
       arrows: true,
       autoplay: false,
+      swipeToSlide: true,
     };
 
     return (
@@ -260,81 +261,97 @@ class HomePage extends Component {
               className="home-page__landmarks_slider"
             >
               <div className="home-page__landmarks_landmark">
-                <span>{t("Ancient Theater of Philippopolis")}</span>
                 <a
+                  draggable="false"
                   href="https://g.page/AncientTheatrePlovdiv?share"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <span>{t("Ancient Theater of Philippopolis")}</span>
                   <img src={amphitheatre} alt="ampthitheatre"></img>
+
+                  <p>{t("Ancient Theater of Philippopolis-description")}</p>
                 </a>
-                <p>{t("Ancient Theater of Philippopolis-description")}</p>
               </div>
+
               <div className="home-page__landmarks_landmark">
-                <span>{t("Ancient Stadium of Philippopolis")}</span>
                 <a
+                  draggable="false"
                   href="https://goo.gl/maps/8ZGDAs7wi2ZK4Gc56"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <span>{t("Ancient Stadium of Philippopolis")}</span>
                   <img src={column} alt="column"></img>
+
+                  <p>{t("Ancient Stadium of Philippopolis-description")}</p>
                 </a>
-                <p>{t("Ancient Stadium of Philippopolis-description")}</p>
               </div>
               <div className="home-page__landmarks_landmark">
-                <span>{t("Nebet Tepe")}</span>
                 <a
+                  draggable="false"
                   href="https://goo.gl/maps/U3v8YjDKD23yGRCn9"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <span>{t("Nebet Tepe")}</span>
                   <img src={ruins} alt="ruins"></img>
+
+                  <p>{t("Nebet Tepe-description")}</p>
                 </a>
-                <p>{t("Nebet Tepe-description")}</p>
               </div>
               <div className="home-page__landmarks_landmark">
-                <span>{t("Resturants")}</span>
                 <a
+                  draggable="false"
                   href="https://www.google.com/search?tbm=lcl&sxsrf=ALeKk03KmQIqlOOk9lLO9qf-R4OL3yiK1g%3A1603724903116&ei=Z-aWX7-3BqbClwTt_a3oBA&q=plovdiv+restaurants&oq=plovdiv+resturan&gs_l=psy-ab.3.3.0i457i13k1j0i13i30k1l2j0i22i10i30k1j0i22i30k1j0i13i30k1l5.65334.67903.0.71202.16.14.0.0.0.0.365.2100.0j7j1j2.10.0....0...1c.1.64.psy-ab..6.10.2096...0j46j46i199i175i39k1j35i39k1j46i457i273k1j46i199i175k1j0i10k1j0i457i20i263k1j0i20i263k1j0i10i203k1j46i199i175i10i203k1j0i457i22i10i30k1j0i8i13i30k1.0.PjrlXGexoPQ#rlfi=hd:;si:;mv:[[42.152012441606445,24.76224121405444],[42.14563300874389,24.746147959965086],null,[42.148822805538295,24.754194587009763],17]"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <span>{t("Resturants")}</span>
                   <img src={resturant} alt="resturant"></img>
+
+                  <p>{t("Resturants-description")}</p>
                 </a>
-                <p>{t("Resturants-description")}</p>
               </div>
               <div className="home-page__landmarks_landmark">
-                <span>{t("Various shopping boutiques")}</span>
                 <a
+                  draggable="false"
                   href="https://www.google.com/search?tbm=lcl&sxsrf=ALeKk00TVSJy3_mW_rJcBzZx4kdfciYlwg%3A1603724976075&ei=sOaWX-aSBJKQlwTz-7LADQ&q=plovdiv+shops&oq=plovdiv+shops&gs_l=psy-ab.3..0i457k1j0i22i10i30k1j0i22i30k1l8.211678.213468.0.214881.13.12.0.0.0.0.287.2085.0j2j7.9.0....0...1c.1.64.psy-ab..4.9.2082...0j38j46j35i457i39k1j46i199i175i39k1j35i39k1j46i67k1j46i199i175k1j0i67k1j46i199i175i67k1j0i203k1j0i457i20i263k1j0i10i203k1j0i10k1.0.cZGtEVa4aOc#rlfi=hd:;si:;mv:[[42.151790061927414,24.761896425657685],[42.14541060665281,24.74580317156833],null,[42.148600414653174,24.753849798613007],17]"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <span>{t("Various shopping boutiques")}</span>
                   <img src={shop} alt="shop"></img>
+
+                  <p>{t("Various shopping boutiques-description")}</p>
                 </a>
-                <p>{t("Various shopping boutiques-description")}</p>
               </div>
+
               <div className="home-page__landmarks_landmark">
-                <span>{t("Plovdiv Airport")}</span>
                 <a
+                  draggable="false"
                   href="https://goo.gl/maps/Fsy6FQq1P5woRNCG8"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <span>{t("Plovdiv Airport")}</span>
                   <img src={airport} alt="airport"></img>
+
+                  <p>{t("Plovdiv Airport-description")}</p>
                 </a>
-                <p>{t("Plovdiv Airport-description")}</p>
               </div>
               <div className="home-page__landmarks_landmark">
-                <span>{t("Kapana-Creative District")}</span>
                 <a
+                  draggable="false"
                   href="https://goo.gl/maps/QX4BQuNzjthcN79J9"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <span>{t("Kapana-Creative District")}</span>
                   <img src={bar} alt="bar"></img>
+
+                  <p>{t("Kapana-Creative District-description")}</p>
                 </a>
-                <p>{t("Kapana-Creative District-description")}</p>
               </div>
             </Slider>
           </div>
