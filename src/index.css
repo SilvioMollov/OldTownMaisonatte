@@ -8,7 +8,11 @@ body {
   color: #333;
 }
 
-
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

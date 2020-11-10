@@ -1,8 +1,4 @@
 .DrawerToggle {
-  &:hover {
-    transform: scale(1.2);
-  }
-
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
@@ -11,34 +7,40 @@
     transform: rotate(45deg);
   }
   div {
-    width: 30px;
+    width: 35px;
     height: 3px;
     background-color: white;
-    margin: 7px 0;
+    margin: 10px 0;
   }
 
   .bar1 {
+    transition: all 0.1s ease-in-out;
+    transition-delay: 0.2s;
     &.change {
-      -webkit-transform: translate(0px, 9px);
-      transform: translate(0, 9px);
-      transition: all 0.1s ease-in-out;
-      transition-delay: 0.2s;
+      -webkit-transform: translate(0px, 15px);
+      transform: translate(0, 15px);
     }
   }
 
   .bar2 {
+    width: 100%;
+    transition: all 0.1s ease-in-out;
+    transition-delay: 0.1s;
+
     &.change {
       width: 0;
-      transition: all 0.1s ease-in-out;
     }
   }
 
   .bar3 {
+    -webkit-transform: rotate(0deg) translate(0px, 0px);
+    transform: rotate(0deg) translate(0px, 0px);
+    transition: all 0.1s ease-in-out;
+    transition-delay: 0.2s;
+
     &.change {
       -webkit-transform: rotate(90deg) translate(-10px, -0px);
       transform: rotate(90deg) translate(-10px, 0px);
-      transition: all 0.1s ease-in-out;
-      transition-delay: 0.2s;
     }
   }
 }
@@ -46,5 +48,13 @@
 @media (min-width: 699px) {
   .DrawerToggle {
     display: none;
+  }
+}
+
+@media (min-width: 499px) {
+  .DrawerToggle {
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }

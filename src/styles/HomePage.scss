@@ -329,6 +329,29 @@
 
 @media screen and (max-width: 600px) {
   .home-page__container {
+    .home-page__slider-container {
+      .home-page__gallery-shortcut {
+        a {
+          font-size: 4.5vw;
+        }
+      }
+
+      .home-page__slider {
+        .home-page__slide {
+          .home-page__slider-description {
+            
+            top: 57%;
+            
+
+            p {
+              font-size: 3.5vw;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+
     .home-page__grid-container__description {
       display: flex;
       flex-direction: column;

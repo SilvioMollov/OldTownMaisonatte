@@ -11,6 +11,10 @@ class Layout extends Component {
   state = {
     showSideDrawer: false,
     eng: false,
+    threshold: null,
+    touchStartPoint: null,
+    touchEndPoint: null,
+    touchM: null,
   };
 
   languageSwitchHandler = (e) => {
@@ -31,18 +35,81 @@ class Layout extends Component {
         htmlLang.attributes.lang.value = "bg";
       }
     });
-
-    // console.log(location);
   };
 
   drawerCloseHandler = () => {
-    this.setState({ showSideDrawer: false });
+    this.setState({ showSideDrawer: false }, () => {
+      const targetElement = document.querySelector(".SideDrawer");
+      targetElement.style.transition = `all 0.4s ease-in-out`;
+      targetElement.style.transform = `translateX(-100%)`;
+    });
   };
 
   drawerOpenHandler = () => {
-    this.setState((prevState) => {
-      return { showSideDrawer: !prevState.showSideDrawer };
+    this.setState({ showSideDrawer: !this.state.showSideDrawer }, () => {
+      const targetElement = document.querySelector(".SideDrawer");
+
+      if (this.state.showSideDrawer) {
+        targetElement.style.transition = `all 0.4s ease-in-out`;
+        targetElement.style.transform = `translateX(0px)`;
+      } else {
+        targetElement.style.transition = `all 0.4s ease-in-out`;
+        targetElement.style.transform = `translateX(-100%)`;
+      }
     });
+  };
+
+  onTouchStartHandler = (e) => {
+    this.setState({
+      touchStartPoint: e.touches[0].clientX,
+      threshold: e.targetTouches[0].target.offsetWidth / 2,
+    });
+  };
+
+  onTouchMoveHandler = (e) => {
+    this.setState({ touchM: e.touches[0].clientX });
+  };
+
+  onTouchEndHandler = (e) => {
+    this.setState({ touchEndPoint: e.changedTouches[0].clientX });
+  };
+
+  onSwipeHandler = (prevState) => {
+    const { touchStartPoint, touchM, touchEndPoint, threshold } = this.state;
+    const targetElement = document.querySelector(".SideDrawer");
+    let movingPosition = touchStartPoint - touchM;
+
+    if (prevState.touchM !== touchM) {
+      targetElement.style.transition = `none`;
+      targetElement.style.transform = `translateX(${-movingPosition}px)`;
+
+      if (movingPosition < 0) {
+        targetElement.style.transform = `translateX(0px)`;
+      }
+    } else if (prevState.touchEndPoint !== touchEndPoint) {
+      if (
+        touchStartPoint > threshold &&
+        touchEndPoint < threshold &&
+        movingPosition > threshold / 2
+      ) {
+        this.drawerCloseHandler();
+      } else {
+        targetElement.style.transition = `all 0.4s ease-in-out`;
+        targetElement.style.transform = `translateX(0px)`;
+      }
+
+      // if (touchStartPoint > threshold && touchEndPoint < threshold) {
+      //
+      // } else {
+      //   this.drawerCloseHandler();
+      // }
+    }
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState !== this.state) {
+      this.onSwipeHandler(prevState);
+    }
   };
 
   render() {
@@ -62,6 +129,9 @@ class Layout extends Component {
           drawerClickHandler={this.drawerOpenHandler}
         />
         <SideDrawer
+          touchStart={this.onTouchStartHandler}
+          touchMove={this.onTouchMoveHandler}
+          touchEnd={this.onTouchEndHandler}
           isOpen={this.state.showSideDrawer}
           clicked={this.drawerCloseHandler}
         />
