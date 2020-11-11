@@ -27,7 +27,7 @@ const sideDrawer = (props) => {
         onTouchMove={props.touchMove}
         onTouchEnd={props.touchEnd}
       >
-        <NavBar onClick={props.clicked} />
+        <NavBar isEng={props.isEng} onClick={props.clicked} />
         <div className="side-drawer__logo">
           <span>Old Town</span>
           <span>Maisonette</span>

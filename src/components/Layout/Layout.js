@@ -10,7 +10,7 @@ import SideDrawer from "./SideDrawer";
 class Layout extends Component {
   state = {
     showSideDrawer: false,
-    eng: false,
+    isEng: true,
     threshold: null,
     touchStartPoint: null,
     touchEndPoint: null,
@@ -21,11 +21,11 @@ class Layout extends Component {
     const htmlLang = document.querySelector("html");
     const body = document.querySelector("body");
 
-    const { eng } = this.state;
+    const { isEng } = this.state;
     const { i18n } = this.props;
 
-    this.setState({ eng: !eng }, () => {
-      if (eng) {
+    this.setState({ isEng: !isEng }, () => {
+      if (this.state.isEng) {
         body.className = "en";
         i18n.changeLanguage("en");
         htmlLang.attributes.lang.value = "en";
@@ -97,23 +97,36 @@ class Layout extends Component {
         targetElement.style.transition = `all 0.4s ease-in-out`;
         targetElement.style.transform = `translateX(0px)`;
       }
-
-      // if (touchStartPoint > threshold && touchEndPoint < threshold) {
-      //
-      // } else {
-      //   this.drawerCloseHandler();
-      // }
     }
   };
 
-  componentDidUpdate = (prevProps, prevState) => {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState !== this.state) {
       this.onSwipeHandler(prevState);
     }
-  };
+  }
+
+  componentDidMount() {
+    const htmlLang = document.querySelector("html");
+    const body = document.querySelector("body");
+    const { i18n, history } = this.props;
+    const langParam = history.location.pathname.slice(-2);
+
+    this.setState({ isEng: langParam === "bg" ? false : true }, () => {
+      if (this.state.isEng) {
+        body.className = "en";
+        i18n.changeLanguage("en");
+        htmlLang.attributes.lang.value = "en";
+      } else {
+        body.className = "bg";
+        i18n.changeLanguage("bg");
+        htmlLang.attributes.lang.value = "bg";
+      }
+    });
+  }
 
   render() {
-    const { showSideDrawer, eng } = this.state;
+    const { showSideDrawer, isEng } = this.state;
     const body = document.querySelector("body");
 
     showSideDrawer
@@ -123,12 +136,13 @@ class Layout extends Component {
     return (
       <>
         <ToolBar
-          isEng={eng}
+          isEng={isEng}
           languageSwitchHandler={this.languageSwitchHandler}
           isOpen={this.state.showSideDrawer}
           drawerClickHandler={this.drawerOpenHandler}
         />
         <SideDrawer
+          isEng={isEng}
           touchStart={this.onTouchStartHandler}
           touchMove={this.onTouchMoveHandler}
           touchEnd={this.onTouchEndHandler}

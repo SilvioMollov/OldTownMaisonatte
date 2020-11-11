@@ -1,18 +1,29 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { withTranslation } from "react-i18next";
+import { withRouter } from "react-router";
 
 import "../../styles/NavBar.scss";
 
 class NavBar extends Component {
+  componentDidUpdate(prevProps) {
+    const { isEng, history } = this.props;
+
+    if (prevProps.isEng !== isEng) {
+      const locationPath = history.location.pathname.slice(0, -2);
+
+      history.push(`${locationPath}${isEng ? "en" : "bg"}`);
+    }
+  }
+
   render() {
-    const { t } = this.props;
+    const { t, isEng } = this.props;
 
     return (
       <ul className="navbar__items">
         <li>
           <NavLink
-            to="/home"
+            to={`/home/${isEng ? "en" : "bg"}`}
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >
@@ -21,7 +32,7 @@ class NavBar extends Component {
         </li>
         <li>
           <NavLink
-            to="/gallery"
+            to={`/gallery/${isEng ? "en" : "bg"}`}
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >
@@ -30,7 +41,7 @@ class NavBar extends Component {
         </li>
         <li>
           <NavLink
-            to="/reservation"
+            to={`/reservation/${isEng ? "en" : "bg"}`}
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >
@@ -42,4 +53,4 @@ class NavBar extends Component {
   }
 }
 
-export default withTranslation("NavigationBar")(NavBar);
+export default withTranslation("NavigationBar")(withRouter(NavBar));

@@ -21,11 +21,11 @@ const toolbar = (props) => {
         </div>
 
         <div className="toolbar__buttons-container">
-          <NavBar />
+          <NavBar isEng={props.isEng} />
 
           <div className="toolbar__buttons-lang">
             <button onClick={props.languageSwitchHandler}>
-              {props.isEng ? "EN" : "BG"}
+              {props.isEng ? "BG" : "EN"}
             </button>
           </div>
         </div>
