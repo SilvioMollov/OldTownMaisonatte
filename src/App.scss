@@ -11,7 +11,8 @@ body {
   &.bg {
     h1,
     h2,
-    h3 {
+    h3,
+    span {
       font-family: "Caveat", cursive;
     }
   }
@@ -19,13 +20,15 @@ body {
   &.en {
     h1,
     h2,
-    h3 {
+    h3,
+    span {
       font-family: "Architects Daughter", cursive;
     }
   }
   p,
   li,
-  span {
+  span,
+  button {
     font-family: "Open Sans", sans-serif;
   }
 }

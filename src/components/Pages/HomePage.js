@@ -120,22 +120,22 @@ class HomePage extends Component {
               className="home-page__slider slider"
             >
               <div className="home-page__slide">
+                <img src={Img1} alt="pic1"></img>
                 <div className="home-page__slider-description">
                   <p>{t("Master Bedroom with a beautiful balcony")}</p>
                 </div>
-                <img src={Img1} alt="pic1"></img>
               </div>
               <div className="home-page__slide">
+                <img src={Img2} alt="pic2"></img>
                 <div className="home-page__slider-description">
                   <p>{t("A specious living room")}</p>
                 </div>
-                <img src={Img2} alt="pic2"></img>
               </div>
               <div className="home-page__slide">
-                <div className="home-page__slider-description">
-                  <p>{t("A small outdoor space, made for relaxation")}</p>
-                </div>
                 <img src={Img3} alt="pic3"></img>
+                <div className="home-page__slider-description">
+                  <p>{t("A small outdoor space.")}</p>
+                </div>
               </div>
             </Slider>
           </div>
@@ -268,9 +268,12 @@ class HomePage extends Component {
                   rel="noopener noreferrer"
                 >
                   <span>{t("Ancient Theater of Philippopolis")}</span>
-                  <img src={amphitheatre} alt="ampthitheatre"></img>
+                  <div>
+                    <img src={amphitheatre} alt="ampthitheatre"></img>
+                  </div>
 
                   <p>{t("Ancient Theater of Philippopolis-description")}</p>
+                  <button>Take me there</button>
                 </a>
               </div>
 
@@ -282,9 +285,12 @@ class HomePage extends Component {
                   rel="noopener noreferrer"
                 >
                   <span>{t("Ancient Stadium of Philippopolis")}</span>
-                  <img src={column} alt="column"></img>
+                  <div>
+                    <img src={column} alt="column"></img>
+                  </div>
 
                   <p>{t("Ancient Stadium of Philippopolis-description")}</p>
+                  <button>Take me there</button>
                 </a>
               </div>
               <div className="home-page__landmarks_landmark">
@@ -295,9 +301,12 @@ class HomePage extends Component {
                   rel="noopener noreferrer"
                 >
                   <span>{t("Nebet Tepe")}</span>
-                  <img src={ruins} alt="ruins"></img>
+                  <div>
+                    <img src={ruins} alt="ruins"></img>
+                  </div>
 
                   <p>{t("Nebet Tepe-description")}</p>
+                  <button>Take me there</button>
                 </a>
               </div>
               <div className="home-page__landmarks_landmark">
@@ -308,9 +317,12 @@ class HomePage extends Component {
                   rel="noopener noreferrer"
                 >
                   <span>{t("Resturants")}</span>
-                  <img src={resturant} alt="resturant"></img>
+                  <div>
+                    <img src={resturant} alt="resturant"></img>
+                  </div>
 
                   <p>{t("Resturants-description")}</p>
+                  <button>Take me there</button>
                 </a>
               </div>
               <div className="home-page__landmarks_landmark">
@@ -321,9 +333,12 @@ class HomePage extends Component {
                   rel="noopener noreferrer"
                 >
                   <span>{t("Various shopping boutiques")}</span>
-                  <img src={shop} alt="shop"></img>
+                  <div>
+                    <img src={shop} alt="shop"></img>
+                  </div>
 
                   <p>{t("Various shopping boutiques-description")}</p>
+                  <button>Take me there</button>
                 </a>
               </div>
 
@@ -335,9 +350,12 @@ class HomePage extends Component {
                   rel="noopener noreferrer"
                 >
                   <span>{t("Plovdiv Airport")}</span>
-                  <img src={airport} alt="airport"></img>
+                  <div>
+                    <img src={airport} alt="airport"></img>
+                  </div>
 
                   <p>{t("Plovdiv Airport-description")}</p>
+                  <button>Take me there</button>
                 </a>
               </div>
               <div className="home-page__landmarks_landmark">
@@ -348,9 +366,12 @@ class HomePage extends Component {
                   rel="noopener noreferrer"
                 >
                   <span>{t("Kapana-Creative District")}</span>
-                  <img src={bar} alt="bar"></img>
+                  <div>
+                    <img src={bar} alt="bar"></img>
+                  </div>
 
                   <p>{t("Kapana-Creative District-description")}</p>
+                  <button>Take me there</button>
                 </a>
               </div>
             </Slider>

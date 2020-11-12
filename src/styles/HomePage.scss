@@ -213,9 +213,6 @@
       }
     }
 
-    .home-page__description_grid-item {
-    }
-
     iframe {
       grid-row: 1 / span 2;
       grid-column: 1;
@@ -239,6 +236,10 @@
 
         .slick-track {
           display: block;
+
+          .slick-slide {
+            padding: 20px;
+          }
         }
       }
 
@@ -265,37 +266,59 @@
     .home-page__landmarks_landmark {
       a {
         padding: 10px;
-        min-height: 350px;
+        min-height: 375px;
         display: grid !important;
-        grid-template-rows: 70px 70px 1fr;
+        grid-template-rows: 70px 70px 200px 50px;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
         gap: 15px;
+        border: 2px solid $body-color;
         justify-content: center;
         text-decoration: none;
         color: #333;
 
         &:hover {
-          img {
-            transform: scale(1.2);
-          }
+          transform: scale(1.05);
         }
 
         span {
-          align-self: baseline;
           grid-row: 1;
           font-family: "Architects Daughter", cursive;
           font-size: 1.5em;
+          align-self: center;
         }
 
-        img {
-          width: 50px;
-          grid-row: 2;
-          margin: 10px auto;
+        div {
+          border-top: 1px solid;
+          border-bottom: 1px solid;
+
+          img {
+            width: 50px;
+            grid-row: 2;
+            margin: 10px auto;
+          }
         }
 
         p {
-          align-self: baseline;
-          margin: 0;
+          align-self: center;
+
           grid-row: 3;
+          margin: 0;
+        }
+
+        button {
+          grid-row: 4;
+          border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+          width: max-content;
+          justify-self: center;
+          cursor: pointer;
+          background-color: $light-gray;
+          color: white;
+          font-weight: 600;
+          border-color: $light-gray;
+
+          &:hover {
+            transform: scale(1.2);
+          }
         }
       }
     }
@@ -324,6 +347,30 @@
     .home-page__landmarks_container {
       grid-template-columns: repeat(2, 1fr);
     }
+    .home-page__landmarks_container {
+      .home-page__landmarks_slider {
+      }
+
+      .home-page__landmarks_landmark {
+        a {
+          grid-template-rows: 70px 70px 300px 50px;
+
+          &:hover {
+            img {
+            }
+          }
+
+          span {
+          }
+
+          img {
+          }
+
+          p {
+          }
+        }
+      }
+    }
   }
 }
 
@@ -331,6 +378,19 @@
   .home-page__container {
     .home-page__slider-container {
       .home-page__gallery-shortcut {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+
+        // top: calc(50% - 65px);
+        bottom: 0;
+
+        left: 5%;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.459);
+        border-radius: 15px;
+        padding: 10px;
         a {
           font-size: 4.5vw;
         }
@@ -339,13 +399,49 @@
       .home-page__slider {
         .home-page__slide {
           .home-page__slider-description {
-            
-            top: 57%;
-            
+            position: relative;
+            bottom: 0;
+            display: flex;
+            top: 0;
+            left: 0;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            min-height: 5vh;
+            background-color: $light-gray;
+            border-radius: 0;
+            padding: 0 15px;
+            border-radius: 240px 10px 205px 15px/15px 225px 15px 255px;
+            border-bottom: solid 2px $dark-brown;
 
             p {
-              font-size: 3.5vw;
-              font-weight: 700;
+              padding: 10px;
+              margin: 0;
+              font-family: "Courgette", cursive;
+              color: white;
+
+              opacity: 1;
+              font-size: 4.5vw;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+
+    // .home-page__h2 {
+    //   margin-bottom: 2vh;
+    // }
+    .home-page__slider {
+      .slick-dots {
+        position: relative;
+        bottom: -0px;
+
+        li {
+          button {
+            &:before {
+              font-size: 15px;
+              color: $body-color;
             }
           }
         }
@@ -355,6 +451,31 @@
     .home-page__grid-container__description {
       display: flex;
       flex-direction: column;
+    }
+
+    .home-page__landmarks_container {
+      .home-page__landmarks_slider {
+      }
+
+      .home-page__landmarks_landmark {
+        a {
+          grid-template-rows: 70px 70px 300px 50px;
+
+          &:hover {
+            img {
+            }
+          }
+
+          span {
+          }
+
+          img {
+          }
+
+          p {
+          }
+        }
+      }
     }
   }
 }

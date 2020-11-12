@@ -169,7 +169,10 @@
   .reservation-page__container {
     .reservation-page__pricing-container {
       display: block;
-
+      .reservation-page__option-container {
+        padding: 0;
+        padding-bottom: 15px;
+      }
       .reservation-page__contacts {
         .reservation-page_container {
           display: flex;
