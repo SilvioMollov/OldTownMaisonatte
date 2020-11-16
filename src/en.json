@@ -9,7 +9,7 @@
     "BBQ facilities": "BBQ facilities",
     "Two Bathrooms": "Two bathrooms",
     "Free Wifi": "Free Wifi",
-    "Outdoor Space": "Outdoor space",
+
     "Free Parking": "Free parking",
     "125 sqm": "125 sqm",
     "Air conditioning": "Air conditioning",
@@ -43,7 +43,19 @@
     "The Balcony": "The Balcony",
     "The Master Bedroom": "The Master Bedroom",
     "The Living Room": "The Living Room",
-    "The Kitchen and Living room": "The Kitchen and Living room"
+    "The Kitchen and Living room": "The Kitchen and Living room",
+    "The Kitchen": "The Kitchen",
+    "Dishwasher": "Dishwasher",
+    "Dining Table": "Dining Table",
+    "Guest Bedroom": "Guest Bedroom",
+    "Second Bathroom": "Second Bathroom",
+    "Outdoor Space": "Outdoor space",
+    "Desk space": "Desk space",
+    "Bathroom": "Bathroom",
+    "Thermostat": "Thermostat",
+    "Front Facede": "Front Facede",
+    "Garage Door": "Garage Door",
+    "Stair Case": "Stair Case"
   },
   "Reservation": {
     "Pricing": "Pricing",

@@ -9,7 +9,7 @@
     "BBQ facilities": "Барбекю",
     "Two Bathrooms": "Две бани",
     "Free Wifi": "Безплатен WiFi",
-    "Outdoor Space": "Външен кът",
+
     "Free Parking": "Безплатен паркинг",
     "125 sqm": "125 кв.м",
     "Air conditioning": "Климатици",
@@ -43,7 +43,19 @@
     "The Balcony": "Балкон",
     "The Master Bedroom": "Главна Спалня",
     "The Living Room": "Хол",
-    "The Kitchen and Living room": "Кухнята и Хола"
+    "The Kitchen and Living room": "Кухнята и Хола",
+    "The Kitchen": "Кухнята",
+    "Dining Table": "Маса за хранене",
+    "Dishwasher": "Миялна машина",
+    "Outdoor Space": "Външен кът",
+    "Guest Bedroom": "Стая за гости",
+    "Second Bathroom": "Втора Баня",
+    "Desk space": "Работно пространство",
+    "Thermostat": "Термостат",
+    "Front Facede": "Предна фасада",
+    "Garage Door": "Вратата на гаража",
+    "Stair Case": "Стъблище",
+    "Bathroom": "Баня"
   },
   "Reservation": {
     "Pricing": "Ценоразпис",

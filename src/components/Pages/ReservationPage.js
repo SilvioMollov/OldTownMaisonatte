@@ -84,44 +84,42 @@ class ReservationPage extends Component {
               <span>{t("Price-Night-Half")}</span>
             </div>
           </div>
-          <div className="reservation-page__contacts">
-            <h2>{t("Contacts us with a click!")}</h2>
-            <div className="reservation-page_container">
-              <div className="reservation-page__contacts-item viber">
-                <a href="viber://chat/?number=%2B359886878677">
-                  <img src={viber} alt="viber"></img>
-                  <span>{t("Chat with us on Viber")}</span>
-                </a>
-              </div>
-              <div className="reservation-page__contacts-item">
-                <a href="tel:+359886878677">
-                  <img src={telephone} alt="viber"></img>
-                  <span id="phone">+359886878677</span>
-                </a>
-                <FontAwesomeIcon
-                  className="reservation-page__copy-button"
-                  icon={faCopy}
-                  onClick={(e) => this.onCopyTextHandler("+359886878677", e)}
-                ></FontAwesomeIcon>
-              </div>
+        </div>
+        <div className="reservation-page__contacts">
+          <h2>{t("Contacts us with a click!")}</h2>
+          <div className="reservation-page_container">
+            <div className="reservation-page__contacts-item viber">
+              <a href="viber://chat/?number=%2B359886878677">
+                <img src={viber} alt="viber"></img>
+                <span>{t("Chat with us on Viber")}</span>
+              </a>
+            </div>
+            <div className="reservation-page__contacts-item">
+              <a href="tel:+359886878677">
+                <img src={telephone} alt="viber"></img>
+                <span id="phone">+359886878677</span>
+              </a>
+              <FontAwesomeIcon
+                className="reservation-page__copy-button"
+                icon={faCopy}
+                onClick={(e) => this.onCopyTextHandler("+359886878677", e)}
+              ></FontAwesomeIcon>
+            </div>
 
-              <div className="reservation-page__contacts-item">
-                <a
-                  href="mailto:vasil97@yahoo.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={email} alt="viber"></img>
-                  <span id="email">vasil97@yahoo.com</span>
-                </a>
-                <FontAwesomeIcon
-                  className="reservation-page__copy-button"
-                  icon={faCopy}
-                  onClick={(e) =>
-                    this.onCopyTextHandler("vasil97@yahoo.com", e)
-                  }
-                ></FontAwesomeIcon>
-              </div>
+            <div className="reservation-page__contacts-item">
+              <a
+                href="mailto:vasil97@yahoo.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={email} alt="viber"></img>
+                <span id="email">vasil97@yahoo.com</span>
+              </a>
+              <FontAwesomeIcon
+                className="reservation-page__copy-button"
+                icon={faCopy}
+                onClick={(e) => this.onCopyTextHandler("vasil97@yahoo.com", e)}
+              ></FontAwesomeIcon>
             </div>
           </div>
         </div>

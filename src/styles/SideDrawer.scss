@@ -1,10 +1,12 @@
 @import "./variables/variables";
 
 .SideDrawer {
-  height: 100%;
+  height: 110%;
   width: 100%;
   background: $body-color;
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
@@ -58,9 +60,10 @@
   .side-drawer__logo {
     width: 100%;
     margin-bottom: 20px;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: 10%;
     padding: 10px;
+
     span {
       display: block;
       word-break: break-all;
@@ -76,10 +79,10 @@
 .SideDrawer.Open {
   transform: translateX(0);
   transition: transform 0.4s ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
   -webkit-overflow-scrolling: touch;
 }

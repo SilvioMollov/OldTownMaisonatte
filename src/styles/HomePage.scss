@@ -58,7 +58,7 @@
         }
         .home-page__slider-description {
           position: absolute;
-          top: 55%;
+          bottom: 50%;
           left: 5%;
           z-index: 10;
           background-color: rgba(255, 255, 255, 0.459);
@@ -228,17 +228,107 @@
     margin-bottom: $margin-body-bottom-container;
     gap: 15px;
 
+    .home-page__reservation-button {
+      z-index: 240;
+      position: fixed;
+      transform: translateX(200%);
+      transition: transform 0.4s ease-in-out;
+
+      bottom: 20px;
+      right: 40px;
+      padding: 5px;
+      border: 2px solid $body-color;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      background-color: white;
+
+      svg {
+        &:hover {
+          transform: scale(1.2);
+        }
+        color: $body-color;
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    .home-page__reservation-button.show {
+      transform: translateX(0);
+      transition: transform 0.4s ease-in-out;
+    }
+
     .home-page__landmarks_slider {
       padding: 0 45px;
 
       .slick-list {
-        overflow: hidden;
+        // overflow: hidden;
 
         .slick-track {
-          display: block;
+          display: flex;
+          gap: 15px;
 
           .slick-slide {
             padding: 20px;
+            height: auto;
+            padding: 10px;
+            position: relative;
+            border: 2px solid $body-color;
+
+            div {
+              height: 100%;
+              .home-page__landmarks_landmark {
+                height: 100%;
+                padding: 10px;
+                display: grid !important;
+                grid-template-rows: 70px 70px 1fr 50px;
+                border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+                gap: 15px;
+                justify-content: center;
+                text-decoration: none;
+                color: #333;
+
+                span {
+                  grid-row: 1;
+                  font-family: "Architects Daughter", cursive;
+                  font-size: 1.5em;
+                  align-self: center;
+                }
+
+                div {
+                  border-top: 1px solid;
+                  border-bottom: 1px solid;
+
+                  img {
+                    width: 50px;
+                    grid-row: 2;
+                    margin: 10px auto;
+                  }
+                }
+
+                p {
+                  align-self: center;
+
+                  grid-row: 3;
+                  margin: 0;
+                }
+
+                button {
+                  grid-row: 4;
+                  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+                  width: max-content;
+                  justify-self: center;
+                  cursor: pointer;
+                  background-color: $light-gray;
+                  color: white;
+                  font-weight: 600;
+                  border-color: $light-gray;
+                  position: relative;
+
+                  &:hover {
+                    transform: scale(1.2);
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -263,66 +353,6 @@
       }
     }
 
-    .home-page__landmarks_landmark {
-      a {
-        padding: 10px;
-        min-height: 375px;
-        display: grid !important;
-        grid-template-rows: 70px 70px 200px 50px;
-        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-        gap: 15px;
-        border: 2px solid $body-color;
-        justify-content: center;
-        text-decoration: none;
-        color: #333;
-
-        &:hover {
-          transform: scale(1.05);
-        }
-
-        span {
-          grid-row: 1;
-          font-family: "Architects Daughter", cursive;
-          font-size: 1.5em;
-          align-self: center;
-        }
-
-        div {
-          border-top: 1px solid;
-          border-bottom: 1px solid;
-
-          img {
-            width: 50px;
-            grid-row: 2;
-            margin: 10px auto;
-          }
-        }
-
-        p {
-          align-self: center;
-
-          grid-row: 3;
-          margin: 0;
-        }
-
-        button {
-          grid-row: 4;
-          border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-          width: max-content;
-          justify-self: center;
-          cursor: pointer;
-          background-color: $light-gray;
-          color: white;
-          font-weight: 600;
-          border-color: $light-gray;
-
-          &:hover {
-            transform: scale(1.2);
-          }
-        }
-      }
-    }
-
     h2 {
       @include headline-borders;
     }
@@ -331,8 +361,67 @@
 
 @media screen and (min-width: 1500px) {
   .home-page__container {
+    .home-page__slider-container {
+      .home-page__gallery-shortcut {
+        a {
+          font-size: 1.5vw;
+        }
+      }
+      .home-page__slider {
+        .slick-dots {
+          li {
+            button {
+              &:before {
+              }
+            }
+          }
+        }
+
+        .slick-dots li.slick-active button:before {
+        }
+
+        .home-page__slide {
+          img {
+          }
+          .home-page__slider-description {
+            p {
+              // font-size: 1vw;
+            }
+          }
+        }
+      }
+    }
+
     .home-page__grid-container__features {
       grid-template-columns: repeat(8, 1fr);
+    }
+
+    .home-page__landmarks_container {
+    }
+
+    .home-page__landmarks_container {
+      .home-page__landmarks_slider {
+      }
+
+      .home-page__landmarks_landmark {
+        a {
+          // grid-template-rows: 70px 70px 300px 50px;
+
+          &:hover {
+            img {
+            }
+          }
+
+          span {
+          }
+
+          img {
+          }
+
+          p {
+          }
+        }
+      }
     }
   }
 }
@@ -353,7 +442,7 @@
 
       .home-page__landmarks_landmark {
         a {
-          grid-template-rows: 70px 70px 300px 50px;
+          // grid-template-rows: 70px 70px 300px 50px;
 
           &:hover {
             img {
@@ -459,8 +548,6 @@
 
       .home-page__landmarks_landmark {
         a {
-          grid-template-rows: 70px 70px 300px 50px;
-
           &:hover {
             img {
             }

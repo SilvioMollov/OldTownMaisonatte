@@ -15,29 +15,37 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    justify-items: stretch;
+    margin-bottom: 20px;
 
     .reservation-page__option-container {
       padding: 15px;
+      display: flex;
+      flex-direction: column;
 
       h1 {
         font-weight: 500;
       }
 
       .reservation-page__features {
+        display: grid;
+        grid-template-rows: 65px 1fr 60px;
         min-height: 100px;
-        margin-bottom: 10px;
         padding: 20px;
         border: 2px solid $dark-brown;
         border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
         background-color: $dark-brown;
 
         p {
+          grid-row: 1;
           padding: 0;
           margin-top: 0;
           color: white;
         }
 
         ul {
+          grid-row: 2;
+
           padding: 20px;
           padding-left: 20%;
           border-top: 2px solid $dark-brown;
@@ -88,76 +96,75 @@
         }
 
         span {
+          grid-row: 3;
           color: white;
-          font-size: 1.5em;
+          font-size: 2em;
           font-weight: 600;
+          align-self: center;
         }
       }
     }
+  }
+  .reservation-page__contacts {
+    h2 {
+      @include headline-borders;
+      margin-bottom: $margin-bottom;
+    }
 
-    .reservation-page__contacts {
-      grid-column: 1 / span 2;
+    .reservation-page_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      justify-content: center;
+      align-content: center;
 
-      h2 {
-        @include headline-borders;
-        margin-bottom: $margin-bottom;
-      }
-
-      .reservation-page_container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
+      .reservation-page__contacts-item {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         justify-content: center;
-        align-content: center;
+        text-decoration: none;
+        padding: 10px;
+        border: 2px solid $dark-brown;
+        min-width: 250px;
+        background-color: $dark-brown;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 
-        .reservation-page__contacts-item {
-          position: relative;
+        &.viber {
+        }
+
+        a {
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: center;
           text-decoration: none;
-          padding: 10px;
-          border: 2px solid $dark-brown;
-          min-width: 250px;
-          background-color: $dark-brown;
-          border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-
-          &.viber {
+          &:hover {
+            transform: scale(1.05);
           }
+        }
 
-          a {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            text-decoration: none;
-            &:hover {
-              transform: scale(1.05);
-            }
-          }
+        img {
+          width: 50px;
+        }
 
-          img {
-            width: 50px;
-          }
+        span {
+          padding-left: 10px;
+          color: white;
+          font-size: 1.2em;
+        }
 
-          span {
-            padding-left: 10px;
-            color: white;
-            font-size: 1.2em;
-          }
+        .reservation-page__copy-button {
+          color: white;
+          width: 25px;
+          height: auto;
+          cursor: pointer;
+          position: absolute;
+          top: 2px;
+          right: 3px;
 
-          .reservation-page__copy-button {
-            color: white;
-            width: 25px;
-            height: auto;
-            cursor: pointer;
-            position: absolute;
-            top: 2px;
-            right: 3px;
-
-            &:hover {
-              transform: scale(1.1);
-            }
+          &:hover {
+            transform: scale(1.1);
           }
         }
       }
@@ -173,41 +180,41 @@
         padding: 0;
         padding-bottom: 15px;
       }
-      .reservation-page__contacts {
-        .reservation-page_container {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-
-          .reservation-page__contacts-item {
-            a {
-              display: grid;
-              grid-template-columns: 100px 1fr;
-              min-width: 360px;
-            }
-
-            &.viber {
-              display: grid;
-            }
-
-            img {
-              grid-column: 1;
-              justify-self: center;
-            }
-
-            span {
-              padding: 0;
-              grid-column: 2;
-              justify-self: start;
-            }
-
-            .reservation-page__copy-button {
-              top: 30%;
-              right: 30px;
+    }
+        .reservation-page__contacts {
+          .reservation-page_container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+  
+            .reservation-page__contacts-item {
+              a {
+                display: grid;
+                grid-template-columns: 100px 1fr;
+                min-width: 360px;
+              }
+  
+              &.viber {
+                display: grid;
+              }
+  
+              img {
+                grid-column: 1;
+                justify-self: center;
+              }
+  
+              span {
+                padding: 0;
+                grid-column: 2;
+                justify-self: start;
+              }
+  
+              .reservation-page__copy-button {
+                top: 30%;
+                right: 30px;
+              }
             }
           }
         }
-      }
-    }
   }
 }
