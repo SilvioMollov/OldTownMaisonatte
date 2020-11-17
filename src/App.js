@@ -22,14 +22,10 @@ class App extends Component {
           <SimpleReactLightbox>
             <Layout>
               <Switch>
-                <Route path="/home/:lng" exact component={HomePage} />
-                <Route path="/gallery/:lng" exact component={GalleryPage} />
-                <Route
-                  path="/reservation/:lng"
-                  exact
-                  component={ReservationPage}
-                />
-                <Redirect to={"/home/en"} />
+                <Route path="/home" exact component={HomePage} />
+                <Route path="/gallery" exact component={GalleryPage} />
+                <Route path="/reservation" exact component={ReservationPage} />
+                <Redirect to={"/home"} />
               </Switch>
             </Layout>
           </SimpleReactLightbox>

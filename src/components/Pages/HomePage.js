@@ -102,9 +102,8 @@ class HomePage extends Component {
 
     const featureSliderSettings = {
       className: "center",
-      centerMode: true,
       infinite: true,
-      centerPadding: "20px",
+      centerPadding: "60px",
       slidesToShow: 2,
       speed: 500,
       rows: 2,
@@ -127,15 +126,6 @@ class HomePage extends Component {
       <>
         <div className="home-page__container">
           <div className="home-page__slider-container">
-            {/* <div className="home-page__gallery-shortcut">
-              <NavLink
-                to="/gallery"
-                className="navbar__navlinks"
-                onClick={this.props.onClick}
-              >
-                {t("Check out more pictures!")}
-              </NavLink>
-            </div> */}
             <Slider
               {...headSliderSettings}
               className="home-page__slider slider"
@@ -410,7 +400,9 @@ class HomePage extends Component {
             </Slider>
 
             <NavLink
-              to={`/reservation/${history.location.pathname.slice(-2)}`}
+              to={`/reservation/${
+                Boolean(history.location.search) ? "?lang=bg" : ""
+              }`}
               className={
                 showReservationButton
                   ? "home-page__reservation-button show"

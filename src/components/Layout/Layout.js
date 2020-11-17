@@ -22,17 +22,21 @@ class Layout extends Component {
     const body = document.querySelector("body");
 
     const { isEng } = this.state;
-    const { i18n } = this.props;
+    const { i18n, history } = this.props;
+
+    console.log(history.location.pathname);
 
     this.setState({ isEng: !isEng }, () => {
       if (this.state.isEng) {
         body.className = "en";
         i18n.changeLanguage("en");
         htmlLang.attributes.lang.value = "en";
+        history.push(history.location.pathname);
       } else {
         body.className = "bg";
         i18n.changeLanguage("bg");
         htmlLang.attributes.lang.value = "bg";
+        history.push(history.location.pathname + "/?lang=bg");
       }
     });
   };
@@ -110,19 +114,21 @@ class Layout extends Component {
     const htmlLang = document.querySelector("html");
     const body = document.querySelector("body");
     const { i18n, history } = this.props;
-    const langParam = history.location.pathname.slice(-2);
 
-    this.setState({ isEng: langParam === "bg" ? false : true }, () => {
-      if (this.state.isEng) {
-        body.className = "en";
-        i18n.changeLanguage("en");
-        htmlLang.attributes.lang.value = "en";
-      } else {
-        body.className = "bg";
-        i18n.changeLanguage("bg");
-        htmlLang.attributes.lang.value = "bg";
+    this.setState(
+      { isEng: Boolean(history.location.search) ? false : true },
+      () => {
+        if (this.state.isEng) {
+          body.className = "en";
+          i18n.changeLanguage("en");
+          htmlLang.attributes.lang.value = "en";
+        } else {
+          body.className = "bg";
+          i18n.changeLanguage("bg");
+          htmlLang.attributes.lang.value = "bg";
+        }
       }
-    });
+    );
   }
 
   render() {

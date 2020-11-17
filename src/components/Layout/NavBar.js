@@ -6,16 +6,6 @@ import { withRouter } from "react-router";
 import "../../styles/NavBar.scss";
 
 class NavBar extends Component {
-  componentDidUpdate(prevProps) {
-    const { isEng, history } = this.props;
-
-    if (prevProps.isEng !== isEng) {
-      const locationPath = history.location.pathname.slice(0, -2);
-
-      history.push(`${locationPath}${isEng ? "en" : "bg"}`);
-    }
-  }
-
   render() {
     const { t, isEng } = this.props;
 
@@ -23,7 +13,7 @@ class NavBar extends Component {
       <ul className="navbar__items">
         <li>
           <NavLink
-            to={`/home/${isEng ? "en" : "bg"}`}
+            to={`/home${!isEng ? "/?lang=bg" : ""}`}
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >
@@ -32,7 +22,7 @@ class NavBar extends Component {
         </li>
         <li>
           <NavLink
-            to={`/gallery/${isEng ? "en" : "bg"}`}
+            to={`/gallery${!isEng ? "/?lang=bg" : ""}`}
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >
@@ -41,7 +31,7 @@ class NavBar extends Component {
         </li>
         <li>
           <NavLink
-            to={`/reservation/${isEng ? "en" : "bg"}`}
+            to={`/reservation${!isEng ? "/?lang=bg" : ""}`}
             className="navbar__navlinks"
             onClick={this.props.onClick}
           >

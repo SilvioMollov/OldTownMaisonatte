@@ -46,8 +46,8 @@ class ReservationPage extends Component {
         <h2>{t("Pricing")}</h2>
         <div className="reservation-page__pricing-container">
           <div className="reservation-page__option-container">
-            <h1>{t("Whole Apartment")}</h1>
             <div className="reservation-page__features">
+            <h1>{t("Whole Apartment")}</h1>
               <p>{t("Whole Apartment-description")}</p>
 
               <ul>
@@ -66,8 +66,8 @@ class ReservationPage extends Component {
           </div>
           {/* =================================================================================== */}
           <div className="reservation-page__option-container">
-            <h1>{t("First floor only")}</h1>
             <div className="reservation-page__features">
+            <h1>{t("First floor only")}</h1>
               <p>{t("Half Apartment-description")}</p>
 
               <ul>

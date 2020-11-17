@@ -89,7 +89,7 @@
   }
 
   .home-page__features_slider {
-    // padding: 0 45px;
+    padding: 0 45px;
     position: relative;
     display: flex;
     overflow: hidden;
@@ -115,6 +115,8 @@
       }
     }
 
+    
+
     .home-page__slider-item {
       padding: 20px;
       height: auto;
@@ -128,6 +130,8 @@
         border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
         border-bottom: solid 5px $body-color;
         border-left: solid 5px $body-color;
+        box-shadow: -6px 12px 10px -1px rgba(0,0,0,0.21);
+
 
         svg {
           margin: auto;
@@ -168,6 +172,7 @@
       border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
       border-bottom: solid 5px $dark-brown;
       border-left: solid 5px $dark-brown;
+      box-shadow: -6px 12px 10px -1px rgba(0, 0, 0, 0.21);
 
       svg {
         margin: auto;
